@@ -1,0 +1,25 @@
+{
+	"name": "chenloveting-gallery",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "server.js",
+	"keywords": [
+		"love, angular, photo, timeline"
+	],
+	"dependencies": {
+		"angular": "latest",
+		"angular-route": "latest",
+		"angular-ui-router": "latest",
+		"angular-bootstrap": "latest"
+	},
+	"devDependencies": {
+		"jquery": "latest",
+		"bootstrap": "latest",
+		"font-awesome": "latest",
+		"animate.css": "latest",
+		"angular-mocks": "latest",
+		"sinon": "latest",
+		"jasmine-sinon": "latest",
+		"underscore": "latest"
+	}
+}

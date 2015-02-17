@@ -1,0 +1,45 @@
+{
+  "name": "chenloveting-gallery",
+  "version": "1.0.0",
+  "description": "chenloveting website",
+	"keywords": "love, angular, photo, timeline",
+	"homepage": "http://www.chen-fang.com",
+	"url": "http://www.chenloveting.com",
+	"author": "Chen Fang <chenfanggm@hotmail.com>",
+	"license": "MIT",
+	"Copyright": "Chen Fang",
+  "main": "server.js",
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "morgan": "latest",
+    "body-parser": "latest",
+    "method-override": "latest"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+	  "grunt-contrib-clean": "latest",
+	  "grunt-contrib-concat": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-nodemon": "latest",
+	  "grunt-concurrent": "latest",
+	  "jshint-stylish": "latest",
+	  "load-grunt-tasks": "latest",
+	  "time-grunt": "latest"
+  },
+	"engines": {
+		"node": ">=0.10.0"
+	},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/npm/npm.git"
+	}
+}

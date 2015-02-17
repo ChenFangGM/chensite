@@ -1,0 +1,49 @@
+// changes for ui.bootstrap
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+html{
+  overflow-y:scroll;
+}
+
+body{
+  padding-top:50px;
+}
+
+#todo-list{
+  margin-bottom:30px;
+}
+
+div#clt-main-title{
+  padding: 30px;
+  border-radius: 10px;
+  font-family: cursive;
+  h1{
+    font-size: 45px;
+    margin: 0px;
+  }
+  p{
+    margin: 0;
+    margin-top: 20px;
+    font-family: inherit;
+  }
+}
+
+div#timeline-form{
+  .form-group{
+    margin: 0;
+  }
+  input{
+    height: 34px;
+  }
+  div#date-picker{
+    padding: 0;
+    p{
+      margin: 0;
+    }
+  }
+  button#timeline-add-btn{
+    height: 34px;
+    padding: 0;
+  }
+}
+
