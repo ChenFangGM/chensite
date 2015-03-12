@@ -7,7 +7,179 @@ html {
 }
 
 body {
-  padding-top: 50px;
+  background: #f4f3f3 url(../img/bg/header.gif) repeat-x center top fixed;
+  color: #444948;
+  font: normal 16px/24px "ProximaNovaLight", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header#header_main {
+  background: rgba(0, 0, 0, 0.3);
+  height: 526px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header#header_main .chen {
+  padding-top: 20px;
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+header#header_main .avatar {
+  display: block;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+header#header_main h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  display: block;
+  font-size: 3em;
+  line-height: 1em;
+  padding-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+header#header_main h2 span {
+  display: block;
+  font-size: 14px;
+  padding-top: 20px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: ProximaNovaLight;
+  letter-spacing: 0.2em;
+}
+header#header_main .social {
+  text-align: center;
+  padding-top: 0;
+}
+header#header_main .social a {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-indent: -999em;
+  -webkit-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  border: 0;
+  -webkit-transition: all .2s ease-in-out;
+  /* For Safari 3.1 to 6.0 */
+  transition: all .2s ease-in-out;
+}
+header#header_main .social a.twitter {
+  background-image: url(../img/icon/twitter.png);
+}
+header#header_main .social a.linkedin {
+  background-image: url(../img/icon/linkedin.png);
+}
+header#header_main .social a.email {
+  background-image: url(../img/icon/email.png);
+}
+header#header_main .social a.github {
+  background-image: url(../img/icon/github.png);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#container_main {
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  width: 100%;
+  margin: 330px auto 0 auto;
+  padding-top: 20px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+#container_main #dash {
+  float: left;
+  width: 150px;
+  margin: 20px 0 10px 0;
+  border-right: 1px solid #f4f3f3;
+}
+#container_main #dash h2 {
+  display: block;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-family: ProximaNovaSemiBold;
+}
+#container_main #dash a {
+  margin: 10px 10px;
+  font-size: 1.2em;
+  font-family: ProximaNovaSemiBold;
+}
+#container_main #page {
+  float: left;
+  width: calc(100% - 150px);
+  padding: 0 20px 0 20px;
+}
+#container_main #page .content {
+  padding-left: 5px;
+}
+#container_main #page .content-wrapper {
+  width: 320px;
+  margin: 0 auto;
+}
+#container_main #page .img-wrapper {
+  padding: 10px 0;
+}
+#container_main #page p {
+  min-width: 580px;
+  margin: 5px 0 0 0;
+  font-family: ProximaNovaSemiBold;
+}
+#container_main #page h1 {
+  min-width: 580px;
+  margin: 10px 0 10px 0;
+}
+#container_main #page h2 {
+  display: block;
+  width: 100%;
+  min-width: 580px;
+  margin: 0 0 2px 0;
+  padding-left: 5px;
+  font-family: ProximaNovaSemiBold;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#container_main #page h3 {
+  display: block;
+  width: 40%;
+  min-width: 300px;
+  margin: 10px 0 0 0;
+  padding-left: 5px;
+  color: #a0a0a0;
+  border-bottom: 1px solid #b3b3b3;
+  font-family: ProximaNovaSemiBold;
+  font-size: 1em;
+  font-weight: bold;
+}
+#container_main #page ul {
+  padding-left: 20px;
 }
 
 #todo-list {
@@ -44,6 +216,134 @@ div#timeline-form div#date-picker p {
 div#timeline-form button#timeline-add-btn {
   height: 34px;
   padding: 0;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-1000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+  }
+  80% {
+    -webkit-transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-1000px);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px);
+  }
+  80% {
+    -moz-transform: translateY(-10px);
+  }
+  100% {
+    -moz-transform: translateY(0);
+  }
+}
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-1000px);
+  }
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px);
+  }
+  80% {
+    -o-transform: translateY(-10px);
+  }
+  100% {
+    -o-transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .portfolio,
+  .portfolio .column,
+  footer,
+  #contact form,
+  #container,
+  #container h2 span {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #container {
+    margin-bottom: 0;
+  }
+
+  footer {
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  .portfolio section a.item,
+  .portfolio section a.item img,
+  .portfolio section.thirds,
+  .portfolio section.thirds:nth-child(2),
+  .portfolio section.column:nth-child(2),
+  .portfolio section.column {
+    padding: 0;
+    margin: 0;
+    float: none;
+    width: 100%;
+  }
+
+  .portfolio section a.item,
+  .portfolio section.thirds .icon,
+  .portfolio section.thirds .item {
+    margin-bottom: 10px;
+  }
+
+  #container,
+  #contact form {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  section.ethos,
+  #totop,
+  #container h2 span em.righty {
+    display: none;
+  }
+
+  div.button {
+    padding-top: 10px;
+  }
+
+  header .chen {
+    padding-top: 120px;
+  }
+
+  header h2 span {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

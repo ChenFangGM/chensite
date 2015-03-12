@@ -1,6 +1,7 @@
 // app/routes.js
 
 var path = require('path');
+var appDir = path.dirname(require.main.filename);
 // load the todo model
 var Todo = require('./models/todoModel');
 
@@ -42,7 +43,6 @@ module.exports = function(app) {
 				res.json(todos);
 			});
 		});
-
 	});
 
 // delete a todo
@@ -64,7 +64,7 @@ module.exports = function(app) {
 
 // application -------------------------------------------------------------
 	app.get('*', function(req, res) {
-		res.sendFile(path.join(__dirname + '../public/index.html')); // load the single view file (angular will handle the page changes on the front-end)
+		res.sendFile(path.join(appDir + '/public/index.html')); // load the single view file (angular will handle the page changes on the front-end)
 	});
 
 };

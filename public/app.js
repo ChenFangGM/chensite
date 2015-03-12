@@ -1,4 +1,4 @@
-// js/app.js
+// public/app.js
 'use strict';
 
 var app = angular.module('galleryApp', [
@@ -11,9 +11,20 @@ var app = angular.module('galleryApp', [
 ]);
 
 app.config(function($stateProvider) {
-	$stateProvider.state('home', {
-		url: '',
-		controller: 'galleryController',
-		templateUrl: 'src/views/gallery.html'
-	});
+	$stateProvider
+		// home page
+		.state('home', {
+			url: '',
+			templateUrl: 'src/views/about.html'
+		})
+		// about page
+		.state('about', {
+			url: '/about',
+			templateUrl: 'src/views/about.html'
+		})
+		// portfolio page
+		.state('portfolio', {
+			url: '/portfolio',
+			templateUrl: 'src/views/portfolio.html'
+		});
 });
