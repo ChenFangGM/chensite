@@ -1,13 +1,8 @@
+// public/src/js/interaction/main_page_interactions.js
+
 'use strict';
 /*global window: false */
 $(function() {
-		$('.email').click(function (e) {
-			if ($(window).width() > 640) {
-				e.preventDefault();
-				$('html, body').animate({scrollTop: $(document).height()}, 'slow');
-			}
-		});
-
 		if ($(window).width() > 640) {
 			var headerHeight = $('header').height();
 			$(document).scroll(function () {

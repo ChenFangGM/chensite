@@ -1,4 +1,4 @@
-// js/controllers/main.js
+// public/src/js/controller/main.js
 'use strict';
 angular.module('todoController', [])
 	// inject the Todo service factory into our controller

@@ -1,4 +1,4 @@
-// public/app.js
+// app.js
 'use strict';
 
 var app = angular.module('galleryApp', [
@@ -7,7 +7,8 @@ var app = angular.module('galleryApp', [
 	'ngRoute',
 	'todoController',
 	'todoService',
-	'ui.bootstrap'
+	'ui.bootstrap',
+	'portfolioController'
 ]);
 
 app.config(function($stateProvider) {
@@ -15,16 +16,17 @@ app.config(function($stateProvider) {
 		// home page
 		.state('home', {
 			url: '',
-			templateUrl: 'src/views/about.html'
+			templateUrl: 'src/view/about.html'
 		})
 		// about page
 		.state('about', {
 			url: '/about',
-			templateUrl: 'src/views/about.html'
+			templateUrl: 'src/view/about.html'
 		})
 		// portfolio page
 		.state('portfolio', {
 			url: '/portfolio',
-			templateUrl: 'src/views/portfolio.html'
+			templateUrl: 'src/view/portfolio.html',
+			controller: 'portfolioController'
 		});
 });

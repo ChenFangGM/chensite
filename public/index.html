@@ -12,9 +12,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css"><!-- load bootstrap -->
-  <link rel="stylesheet" type="text/css" href="dist/css/angular-timeline-bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="dist/css/angular-timeline.css">
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+  <!-- JS -->
 
 </head>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
@@ -34,46 +33,32 @@
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1">
       <div id="dash">
-        <h2>Dash Board</h2>
+        <h2><span class="glyphicon glyphicon-home"></span> Dash Board</h2>
         <a ui-sref="about">About</a><br>
         <a ui-sref="portfolio">Portfolio</a>
       </div>
       <div id="page">
         <div ui-view></div>
+        <div class="content">
+          <h2>Dungeon, Dragon & Me</h2>
+          <h3><span class="glyphicon glyphicon-knight"></span> Game</h3>
+          <div id="unityPlayer">
+            <div class="missing">
+              <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+                <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+              </a>
+            </div>
+            <div class="broken">
+              <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+                <img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!--<div class="container" ng-controller="todoController">
-  <div class="jumbotron text-center" id="clt-main-title">
-    <h1>遇到你的这辈子，我只想好好爱你</h1>
-    <p>妍童，我爱你，非常爱</p>
-  </div>
-  <div id="timeline-form" class="row">
-    <div class="col-sm-4 col-sm-offset-4 text-center">
-      <form>
-        <div class="form-group">
-          <input type="text" class="form-control input-lg text-center" placeholder="Location" ng-model="formData.location">
-          <div id="date-picker" class="col-md-12" ng-controller="DatepickerCtrl">
-            <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="formData.date" is-open="opened" min-date="'2015-09-01'" max-date="'2016-11-26'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-                            <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-                            </span>
-            </p>
-          </div>
-          <input type="text" class="form-control input-lg text-center" placeholder="ImageSrc" ng-model="formData.image">
-          <input type="text" class="form-control input-lg text-center" placeholder="Content" ng-model="formData.content">
-        </div>
-        <button id="timeline-add-btn" type="submit" class="col-sm-12 btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
-      </form>
-    </div>
-  </div>
-  -->
-<!-- Photo Gallery with Bootstrap -->
-<!--<div ui-view></div>
-</div>-->
 <!-- JS -->
 <script src="libs/jquery/dist/jquery.min.js"></script><!-- load jquery -->
 <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -82,13 +67,16 @@
 <script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script> <!-- load ui-router -->
 <script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
 
-<script src="src/js/interaction/main_page_interaction.js"></script>
-<script src="src/js/modules/timeline-module.js"></script>
+<script src="src/js/utility/unity_webplayer_head.js"></script><!-- load unityObject2.js -->
+<script src="src/js/utility/unity_webplayer_body.js"></script><!-- setup unity webplayer -->
+<script src="src/js/utility/main_page_utility.js"></script><!-- index page interaction -->
+<script src="src/js/module/timeline-module.js"></script>
 <script src="app.js"></script> <!-- load our main application -->
-<script src="src/js/controllers/gallery-controller.js"></script>
-<script src="src/js/controllers/todo-controller.js"></script>
-<script src="src/js/services/todo-service.js"></script>
-<script src="src/js/controllers/datePicker-controller.js"></script>
+<script src="src/js/controller/gallery-controller.js"></script>
+<script src="src/js/controller/todo-controller.js"></script>
+<script src="src/js/service/todo-service.js"></script>
+<script src="src/js/controller/datePicker-controller.js"></script>
+<!-- <script src="src/js/utility/unity_webplayer_body.js"></script> -->
 <!-- <script src="dist/js/app.min.js"></script> <!-- load minified app.min.js -->
 <!-- tracking -->
 <script src="src/js/tracking/google_analytics.js"></script>

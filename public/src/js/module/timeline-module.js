@@ -1,3 +1,5 @@
+// public/src/module/timeline-module.js
+
 'use strict';
 angular.module('angular-timeline', []);
 // Source: public/src/js/directives/timeline-badge-directive.js

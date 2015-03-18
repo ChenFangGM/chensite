@@ -1,8 +1,9 @@
 {
-	"name": "chenloveting-gallery",
-	"version": "1.0.0",
+	"name": "www.chen-fang.com",
+	"version": "0.0.1",
 	"license": "MIT",
 	"main": "server.js",
+    "private": true,
 	"keywords": [
 		"love, angular, photo, timeline"
 	],
@@ -10,7 +11,9 @@
 		"angular": "latest",
 		"angular-route": "latest",
 		"angular-ui-router": "latest",
-		"angular-bootstrap": "latest"
+		"angular-bootstrap": "latest",
+        "requirejs-text": "latest",
+        "requirejs": "latest"
 	},
 	"devDependencies": {
 		"jquery": "latest",

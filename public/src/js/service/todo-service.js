@@ -1,4 +1,4 @@
-// js/services/todos.js
+// public/src/js/service/todos.js
 'use strict';
 angular.module('todoService', [])
 	// super simple service
