@@ -5,7 +5,7 @@ var appDir = path.dirname(require.main.filename);
 // load the todo model
 var Todo = require('./models/todoModel');
 
-// expose the routes to our app with module.exports
+// expose the routes to our expressApp with module.exports
 module.exports = function(app) {
 
 // api ---------------------------------------------------------------------

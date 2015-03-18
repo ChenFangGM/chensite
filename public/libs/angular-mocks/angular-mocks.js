@@ -1805,7 +1805,7 @@ angular.mock.$AsyncCallbackDecorator = ['$delegate', function($delegate) {
  */
 angular.mock.$RootElementProvider = function() {
   this.$get = function() {
-    return angular.element('<div ng-app></div>');
+    return angular.element('<div ng-expressApp></div>');
   };
 };
 
@@ -1902,7 +1902,7 @@ angular.module('ngMockE2E', ['ng']).config(['$provide', function($provide) {
  *   });
  * ```
  *
- * Afterwards, bootstrap your app with this new module.
+ * Afterwards, bootstrap your expressApp with this new module.
  */
 
 /**
@@ -2281,7 +2281,7 @@ if (window.jasmine || window.mocha) {
    * ```js
    *
    *   angular.module('myApplicationModule', [])
-   *       .value('mode', 'app')
+   *       .value('mode', 'expressApp')
    *       .value('version', 'v1.0.1');
    *
    *
@@ -2295,7 +2295,7 @@ if (window.jasmine || window.mocha) {
    *     // inject() is used to inject arguments of all given functions
    *     it('should provide a version', inject(function(mode, version) {
    *       expect(version).toEqual('v1.0.1');
-   *       expect(mode).toEqual('app');
+   *       expect(mode).toEqual('expressApp');
    *     }));
    *
    *

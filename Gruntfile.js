@@ -61,7 +61,11 @@ module.exports = function(grunt) {
 				reporter: require('jshint-stylish') // use jshint-stylish to make our errors look and read good
 			},
 			// when this task is run, lint the Gruntfile and all js files in src
-			all: ['<%= project.js %>/**/*.js']
+			all: [
+				'<%= project.js %>/**/*.js',
+				'!<%= project.js %>/tracking/*.js',
+				'!<%= project.js %>/utility/*.js'
+			]
 		},
 
 		// configure uglify to minify js files -------------------------------------

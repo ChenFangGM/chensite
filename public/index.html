@@ -7,17 +7,12 @@
   <!-- META -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-
   <title>Chen Fang - Software Engineer + Game Developer</title>
-
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css"><!-- load bootstrap -->
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
-  <!-- JS -->
-
 </head>
-<!-- SET THE CONTROLLER AND GET ALL TODOS -->
-<body ng-app="galleryApp">
+<body ng-app="mainApp">
 <header id="header_main">
   <div class="chen">
     <img class="avatar" src="dist/img/profile/myselfie.png" alt="Chen">
@@ -60,24 +55,7 @@
   </div>
 </div>
 <!-- JS -->
-<script src="libs/jquery/dist/jquery.min.js"></script><!-- load jquery -->
-<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="libs/angular/angular.min.js"></script><!-- load angular 1.3.11 -->
-<script src="libs/angular-route/angular-route.min.js"></script> <!-- load ng-route -->
-<script src="libs/angular-ui-router/release/angular-ui-router.min.js"></script> <!-- load ui-router -->
-<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
-
-<script src="src/js/utility/unity_webplayer_head.js"></script><!-- load unityObject2.js -->
-<script src="src/js/utility/unity_webplayer_body.js"></script><!-- setup unity webplayer -->
-<script src="src/js/utility/main_page_utility.js"></script><!-- index page interaction -->
-<script src="src/js/module/timeline-module.js"></script>
-<script src="app.js"></script> <!-- load our main application -->
-<script src="src/js/controller/gallery-controller.js"></script>
-<script src="src/js/controller/todo-controller.js"></script>
-<script src="src/js/service/todo-service.js"></script>
-<script src="src/js/controller/datePicker-controller.js"></script>
-<!-- <script src="src/js/utility/unity_webplayer_body.js"></script> -->
-<!-- <script src="dist/js/app.min.js"></script> <!-- load minified app.min.js -->
+<script data-main="main.js" src="libs/requirejs/require.js"></script>
 <!-- tracking -->
 <script src="src/js/tracking/google_analytics.js"></script>
 </body>

@@ -2,7 +2,7 @@
 
 // set up ======================================================================
 var express  = require('express');
-var app      = express();                               // create our app w/ express
+var expressApp = express();                               // create our expressApp w/ express
 var mongoose = require('mongoose');                     // mongoose for mongodb
 var port     = process.env.PORT || 2010;                // set the port
 var database = require('./config/db');            // load the database config
@@ -14,16 +14,16 @@ var methodOverride = require('method-override'); // simulate DELETE and PUT (exp
 // configuration ===============================================================
 mongoose.connect(database.url);     // connect to mongoDB database on modulus.io
 
-app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
-app.use(morgan('dev'));                                         // log every request to the console
-app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-app.use(bodyParser.json());                                     // parse application/json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-app.use(methodOverride());
+expressApp.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
+expressApp.use(morgan('dev'));                                         // log every request to the console
+expressApp.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
+expressApp.use(bodyParser.json());                                     // parse application/json
+expressApp.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
+expressApp.use(methodOverride());
 
 // routes ======================================================================
-require('./app/routes.js')(app);
+require('./app/routes.js')(expressApp);
 
-// listen (start app with node server.js) ======================================
-app.listen(port);
+// listen (start expressApp with node server.js) ======================================
+expressApp.listen(port);
 console.log("App listening on port " + port);
