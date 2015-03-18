@@ -1,4 +1,6 @@
-// running app
+// main.js
+
+// config require
 require.config({
 	paths: {
 		'jquery': 'libs/jquery/dist/jquery.min',
@@ -11,16 +13,21 @@ require.config({
 		'ui-router': 'libs/angular-ui-router/release/angular-ui-router.min',
 		'angularMocks': 'libs/angular-mocks/angular-mocks',
 		'angularBootstrap': 'libs/angular-bootstrap/ui-bootstrap.min',
-		'unityWebHead': 'src/js/utility/unity_webplayer_head',
-		'unityWebBody': 'src/js/utility/unity_webplayer_body',
-		'mainPageUtility': 'src/js/utility/main_page_utility',
-		'timelineModule': 'src/js/module/timeline-module',
-		'galleryController': 'src/js/controller/gallery-controller',
-		'todoController': 'src/js/controller/todo-controller',
-		'todoService': 'src/js/service/todo-service',
-		'datePickerController': 'src/js/controller/datePicker-controller',
+
+		'controller-manager': 'src/js/controllers/controller-manager',
+		'controller-index': 'src/js/controllers/controller-index',
+		'portfolio-controller': 'src/js/controllers/portfolio-controller',
+		'unityObject2': 'src/js/utilities/UnityObject2',
+		'unityWebplayer': 'src/js/utilities/unity_webplayer',
+		'mainPageUtility': 'src/js/utilities/main_page_utility',
+		'timelineModule': 'src/js/modules/timeline-module',
+		'portfolioController': 'src/js/controllers/portfolio-controller',
+		'todoController': 'src/js/controllers/todo-controller',
+		'todoService': 'src/js/services/todo-service',
+		'datePickerController': 'src/js/controllers/datePicker-controller',
 		'text': 'libs/requirejs-text/text',
-		'app': 'app'
+		'app': 'app',
+		'router': 'router'
 	},
 	// dependencies defined below
 	shim: {
@@ -35,7 +42,9 @@ require.config({
 // bootstrap the app
 require([
 	'angular',
-	'app'
+	'app',
+	'router',
+	'mainPageUtility'
 ],function(angular){
 	'use strict';
 	require(['domReady!'], function(document){
