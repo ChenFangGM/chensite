@@ -11,13 +11,16 @@ body {
   font: normal 16px/24px "ProximaNovaLight", "Helvetica Neue", Helvetica, sans-serif;
 }
 
+img{
+  max-width:100%;
+  height:auto;
+}
+
 header#header_main {
   background: rgba(0, 0, 0, 0.3);
-  height: 526px;
   position: fixed;
   top: 0;
   width: 100%;
-
   .chen {
     padding-top: 30px;
 
@@ -97,11 +100,6 @@ header#header_main {
   }
 }
 
-img{
-  max-width:100%;
-  height:auto;
-}
-
 #container_main {
   position: relative;
   overflow: hidden;
@@ -109,13 +107,14 @@ img{
   width: 100%;
   margin: 330px auto 0 auto;
   padding-top: 20px;
+  padding-bottom: 10px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0,0,0,.2);
 
   #dash{
     float: left;
     width: 150px;
-    margin: 20px 0 10px 0;
+    margin: 0 0 10px 0;
     border-right: 1px solid #f4f3f3;
     h2 {
       display: block;
@@ -136,21 +135,18 @@ img{
   #page{
     float: left;
     width: calc(100% - 150px);
+    min-height: 500px;
     padding: 0 20px 0 20px;
 
     .content{
       padding-left: 5px;
     }
-
     .content-wrapper{
       width: 320px;
-      margin: 0 auto;
     }
-
     .img-wrapper{
       padding: 10px 0;
     }
-
     p{
       min-width: 580px;
       margin: 5px 0 0 0;
@@ -185,6 +181,15 @@ img{
     ul{
       padding-left: 20px;
     }
+  }
+}
+
+footer#footer_main{
+  z-index: 3;
+  background: white;
+  text-align: center;
+  p{
+    padding: 15px;
   }
 }
 

@@ -23,6 +23,10 @@
     "jQuery":   false,
     "Backbone": false,
     "_":        false,
-    "document": false
+    "document": false,
+    /* requirejs */
+    "define": false,
+    /* unityWebplayer */
+    "UnityObject2": false
   }
 }

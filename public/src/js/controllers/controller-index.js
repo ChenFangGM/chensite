@@ -2,4 +2,6 @@
 
 define([
 	'portfolio-controller'
-], function () {});
+], function () {
+	'use strict';
+});

@@ -1,7 +1,6 @@
 // src/js/interaction/main_page_interactions.js
-
+'use strict';
 define(['jquery'], function($){
-	'use strict';
 	/*global window: false */
 	$(function() {
 			if ($(window).width() > 640) {

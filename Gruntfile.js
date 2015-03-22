@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 			all: [
 				'<%= project.js %>/**/*.js',
 				'!<%= project.js %>/tracking/*.js',
-				'!<%= project.js %>/utility/*.js'
+				'!<%= project.js %>/utilities/*.js'
 			]
 		},
 

@@ -12,9 +12,13 @@ body {
   font: normal 16px/24px "ProximaNovaLight", "Helvetica Neue", Helvetica, sans-serif;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 header#header_main {
   background: rgba(0, 0, 0, 0.3);
-  height: 526px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -97,11 +101,6 @@ header#header_main .social a.github {
   background-image: url(../img/icon/github.png);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 #container_main {
   position: relative;
   overflow: hidden;
@@ -109,13 +108,14 @@ img {
   width: 100%;
   margin: 330px auto 0 auto;
   padding-top: 20px;
+  padding-bottom: 10px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 #container_main #dash {
   float: left;
   width: 150px;
-  margin: 20px 0 10px 0;
+  margin: 0 0 10px 0;
   border-right: 1px solid #f4f3f3;
 }
 #container_main #dash h2 {
@@ -135,6 +135,7 @@ img {
 #container_main #page {
   float: left;
   width: calc(100% - 150px);
+  min-height: 500px;
   padding: 0 20px 0 20px;
 }
 #container_main #page .content {
@@ -142,7 +143,6 @@ img {
 }
 #container_main #page .content-wrapper {
   width: 320px;
-  margin: 0 auto;
 }
 #container_main #page .img-wrapper {
   padding: 10px 0;
@@ -180,6 +180,15 @@ img {
 }
 #container_main #page ul {
   padding-left: 20px;
+}
+
+footer#footer_main {
+  z-index: 3;
+  background: white;
+  text-align: center;
+}
+footer#footer_main p {
+  padding: 15px;
 }
 
 #todo-list {
