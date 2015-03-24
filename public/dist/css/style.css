@@ -147,6 +147,9 @@ header#header_main .social a.github {
 #container_main #page .img-wrapper {
   padding: 10px 0;
 }
+#container_main #page a {
+  margin: 5px 0 0 10px;
+}
 #container_main #page p {
   min-width: 580px;
   margin: 5px 0 0 0;
