@@ -118,14 +118,14 @@ header#header_main .social a.github {
 #container_main #dash {
   z-index: 4;
   width: 300px;
+  min-width: 270px;
   height: 31px;
   margin: 0 auto 15px auto;
   border-bottom: thin solid #b2b2b2;
 }
-#container_main #dash #dash-wrapper {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+#container_main #dash #wrapper {
+  width: 270px;
+  margin: 0 auto;
 }
 #container_main #dash h2 {
   display: inline;
