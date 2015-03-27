@@ -67,7 +67,6 @@ header#header_main {
   h2 span {
     display: block;
     font-size: 14px;
-    padding-top: 20px;
     font-weight: normal;
     color: rgba(255,255,255,0.6);
     font-family: ProximaNovaLight;
@@ -105,7 +104,7 @@ header#header_main {
   overflow: hidden;
   z-index: 3;
   width: 100%;
-  margin: 330px auto 0 auto;
+  margin: 305px auto 0 auto;
   padding-top: 10px;
   padding-bottom: 10px;
   background: #fff;
@@ -144,17 +143,36 @@ header#header_main {
     min-height: 500px;
     padding: 0 20px 0 20px;
     margin: 0 auto;
+    .title{
+      text-align: center;
+      h1{
+        min-width: inherit;
+        margin: 10px 0 10px 0;
+      }
+      h2 {
+        display: block;
+        width: 100%;
+        min-width: inherit;
+        margin: 0 0 2px 0;
+        padding-left: 5px;
+        font-family: ProximaNovaSemiBold;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
     .content{
       padding-left: 5px;
     }
-    .content-wrapper{
+    .wrapper{
       width: 320px;
+      margin: 0 auto;
     }
     .img-wrapper{
+      max-width: 350px;
+      margin: 0 auto;
       padding: 10px 0;
     }
     .right-page{
-      max-width: 300px;
     }
     a{
       margin: 5px 0 0 10px;
@@ -361,6 +379,6 @@ div#timeline-form{
 
   header .chen { padding-top: 120px; }
 
-  header h2 span { padding-top: 0; padding-bottom: 20px; }
+  header h2 span { padding-top: 0;}
 }
 

@@ -63,7 +63,6 @@ header#header_main h2 {
 header#header_main h2 span {
   display: block;
   font-size: 14px;
-  padding-top: 20px;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.6);
   font-family: ProximaNovaLight;
@@ -106,7 +105,7 @@ header#header_main .social a.github {
   overflow: hidden;
   z-index: 3;
   width: 100%;
-  margin: 330px auto 0 auto;
+  margin: 305px auto 0 auto;
   padding-top: 10px;
   padding-bottom: 10px;
   background: #fff;
@@ -146,17 +145,34 @@ header#header_main .social a.github {
   padding: 0 20px 0 20px;
   margin: 0 auto;
 }
+#container_main #page .title {
+  text-align: center;
+}
+#container_main #page .title h1 {
+  min-width: inherit;
+  margin: 10px 0 10px 0;
+}
+#container_main #page .title h2 {
+  display: block;
+  width: 100%;
+  min-width: inherit;
+  margin: 0 0 2px 0;
+  padding-left: 5px;
+  font-family: ProximaNovaSemiBold;
+  font-size: 1.2em;
+  font-weight: bold;
+}
 #container_main #page .content {
   padding-left: 5px;
 }
-#container_main #page .content-wrapper {
+#container_main #page .wrapper {
   width: 320px;
+  margin: 0 auto;
 }
 #container_main #page .img-wrapper {
+  max-width: 350px;
+  margin: 0 auto;
   padding: 10px 0;
-}
-#container_main #page .right-page {
-  max-width: 300px;
 }
 #container_main #page a {
   margin: 5px 0 0 10px;
@@ -365,7 +381,6 @@ div#timeline-form button#timeline-add-btn {
 
   header h2 span {
     padding-top: 0;
-    padding-bottom: 20px;
   }
 }
 
