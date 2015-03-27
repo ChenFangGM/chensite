@@ -60,12 +60,16 @@ header#header_main h2 {
   margin-top: 10px;
   margin-bottom: 0px;
 }
-header#header_main h2 span {
-  display: block;
+header#header_main p {
   font-size: 14px;
   font-weight: normal;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
   font-family: ProximaNovaLight;
+  text-transform: uppercase;
+  line-height: 1em;
+  padding-top: 10px;
+  margin-top: 10px;
   letter-spacing: 0.2em;
 }
 header#header_main .social {
@@ -142,7 +146,6 @@ header#header_main .social a.github {
 }
 #container_main #page {
   min-height: 500px;
-  padding: 0 20px 0 20px;
   margin: 0 auto;
 }
 #container_main #page .title {
@@ -322,6 +325,10 @@ div#timeline-form button#timeline-add-btn {
   }
 }
 @media only screen and (max-width: 640px) {
+  #dev-title {
+    display: none;
+  }
+
   .portfolio,
   .portfolio .column,
   footer,
@@ -357,6 +364,10 @@ div#timeline-form button#timeline-add-btn {
   .portfolio section.thirds .icon,
   .portfolio section.thirds .item {
     margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 0;
   }
 
   #container,
