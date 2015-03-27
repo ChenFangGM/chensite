@@ -107,19 +107,25 @@ header#header_main .social a.github {
   z-index: 3;
   width: 100%;
   margin: 330px auto 0 auto;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 #container_main #dash {
-  float: left;
-  width: 150px;
-  margin: 0 0 10px 0;
-  border-right: 1px solid #f4f3f3;
+  z-index: 4;
+  width: 300px;
+  height: 31px;
+  margin: 0 auto 15px auto;
+  border-bottom: thin solid #b2b2b2;
+}
+#container_main #dash #dash-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 #container_main #dash h2 {
-  display: block;
+  display: inline;
   width: 100%;
   font-size: 1.2em;
   font-weight: bold;
@@ -128,15 +134,17 @@ header#header_main .social a.github {
   font-family: ProximaNovaSemiBold;
 }
 #container_main #dash a {
-  margin: 10px 10px;
+  margin: 0 0 0 5px;
   font-size: 1.2em;
   font-family: ProximaNovaSemiBold;
 }
+#container_main #dash p {
+  display: inline;
+}
 #container_main #page {
-  float: left;
-  width: calc(100% - 150px);
   min-height: 500px;
   padding: 0 20px 0 20px;
+  margin: 0 auto;
 }
 #container_main #page .content {
   padding-left: 5px;
@@ -146,6 +154,9 @@ header#header_main .social a.github {
 }
 #container_main #page .img-wrapper {
   padding: 10px 0;
+}
+#container_main #page .right-page {
+  max-width: 300px;
 }
 #container_main #page a {
   margin: 5px 0 0 10px;
