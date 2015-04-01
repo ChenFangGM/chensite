@@ -324,7 +324,10 @@ div#timeline-form button#timeline-add-btn {
     transform: translateY(0);
   }
 }
-@media only screen and (max-width: 640px) {
+/*==========  Mobile First Method  ==========*/
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
   #dev-title {
     display: none;
   }
@@ -393,6 +396,29 @@ div#timeline-form button#timeline-add-btn {
   header h2 span {
     padding-top: 0;
   }
+}
+/* Small Devices, Tablets */
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+/* for using ui-bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+.modal {
+  display: block;
+}
+
+.modal-body:before,
+.modal-body:after {
+  display: table;
+  content: " ";
+}
+
+.modal-header:before,
+.modal-header:after {
+  display: table;
+  content: " ";
 }
 
 /*# sourceMappingURL=style.css.map */

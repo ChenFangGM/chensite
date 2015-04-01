@@ -3,7 +3,8 @@
 define([
 	'angular',
 	'ui-router',
-	'controller-index'
+	'ui-bootstrap',
+	'src/js/controllers/controller-index'
 	//'./directives/index',
 	//'./filters/index',
 	//'./services/index'
@@ -11,6 +12,7 @@ define([
 	'use strict';
 	var app = angular.module('mainApp', [
 		'ui.router',
+		'ui.bootstrap',
 		'controllerManager'
 		//'app.services'
 		//'app.filters',

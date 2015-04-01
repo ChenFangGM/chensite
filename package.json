@@ -10,12 +10,26 @@
   "Copyright": "Chen Fang",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "latest",
     "express": "latest",
-    "method-override": "latest",
     "mongoose": "latest",
+    "requirejs": "latest",
+    "ejs": "latest",
+    "underscore": "latest",
+    "passport": "latest",
+    "passport-local": "latest",
+    "passport-facebook" : "latest",
+    "passport-twitter" : "latest",
+    "passport-google-oauth" : "latest",
+    "connect-flash" : "latest",
+    "bcrypt-nodejs": "latest",
+    "path": "latest",
+    "fs": "latest",
+
     "morgan": "latest",
-    "requirejs": "latest"
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "method-override": "latest",
+    "express-session": "latest"
   },
   "devDependencies": {
     "grunt": "latest",

@@ -1,6 +1,6 @@
 // src/js/controller/portfolio-controller.js
 define([
-	'controller-manager',
+	'./controller-manager',
 	'jquery',
 	'unityObject2'
 ], function (controllerManager,jQuery) {

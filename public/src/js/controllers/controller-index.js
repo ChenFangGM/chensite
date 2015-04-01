@@ -1,7 +1,8 @@
-// src/js/controllers/controller-manager.js
+// src/js/controllers/controller-index.js
 
 define([
-	'portfolio-controller'
+	'./portfolio-controller',
+	'./login-controller'
 ], function () {
 	'use strict';
 });

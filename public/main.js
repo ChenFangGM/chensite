@@ -10,18 +10,14 @@ require.config({
 		'angularRoute': 'libs/angular-route/angular-route.min',
 		'ui-router': 'libs/angular-ui-router/release/angular-ui-router.min',
 		'angularMocks': 'libs/angular-mocks/angular-mocks',
-		'angularBootstrap': 'libs/angular-bootstrap/ui-bootstrap.min',
 		'jquery': 'libs/jquery/dist/jquery.min',
 		'jquery-ui': 'libs/jquery-ui/jquery-ui.min',
 		'bootstrap': 'libs/bootstrap/dist/js/bootstrap.min',
+		'ui-bootstrap': 'libs/angular-bootstrap/ui-bootstrap.min',
 
-		'controller-manager': 'src/js/controllers/controller-manager',
-		'controller-index': 'src/js/controllers/controller-index',
-		'portfolio-controller': 'src/js/controllers/portfolio-controller',
 		'unityObject2': 'src/js/utilities/UnityObject2',
 		'mainPageUtility': 'src/js/utilities/main_page_utility',
 		'timelineModule': 'src/js/modules/timeline-module',
-		'portfolioController': 'src/js/controllers/portfolio-controller',
 		'todoController': 'src/js/controllers/todo-controller',
 		'todoService': 'src/js/services/todo-service',
 		'datePickerController': 'src/js/controllers/datePicker-controller',
@@ -34,7 +30,7 @@ require.config({
 		'angular' : {'exports': 'angular'},
 		'angular-resource': {deps: ['angular']},
 		'ui-router': {deps: ['angular']},
-		'angularBootstrap': {deps: ['angular']},
+		'ui-bootstrap': {deps: ['angular']},
 		'jquery-ui': {deps: ['jquery']}
 	}
 });
