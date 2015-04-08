@@ -2,7 +2,7 @@
 
 var path = require('path');
 var appDir = path.dirname(require.main.filename);
-var auth = require('../config/auth');
+var auth = require('./config/auth');
 // load the todo model
 //var Todo = require('./models/todoModel');
 
@@ -26,22 +26,32 @@ module.exports = function(expressApp, passport) {
 		session: true
 	}));
 
+	// User Routes
+	var users = require('./controllers/users');
+	expressApp.post('/auth/users', users.create);
+	expressApp.get('/auth/users/:userId', users.show);
+
+	// Check if username is available
+	// todo: probably should be a query on users
+	expressApp.get('/auth/check_username/:username', users.exists);
+
+	// Session Routes
 	var session = require('./controllers/session');
 	expressApp.get('/auth/session', auth.ensureAuthenticated, session.session);
 	expressApp.post('/auth/session', session.login);
-	expressApp.del('/auth/session', session.logout);
-	// ************* handle logout with api
-	/*
+	expressApp.delete('/auth/session', session.logout);
+
+	// Log out
 	expressApp.get('/logout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
-	*/
+
 	expressApp.get('/*', auth.ensureAuthenticated, function(req, res) {
 		if(req.user) {
 			res.cookie('user', JSON.stringify(req.user.user_info));
 		}
-		res.render(path.join(appDir + '/public/index.html')); // load the single view file (angular will handle the page changes on the front-end)
+		res.render(path.join(appDir + '/public/index.html'));
 	});
 
 

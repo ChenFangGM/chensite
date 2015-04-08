@@ -2,9 +2,7 @@
 
 // load all the things we need
 var LocalStrategy = require('passport-local').Strategy;
-
-// load up the user model
-var User = require('../server/models/user');
+var User = require('../models/user');
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -17,12 +15,12 @@ module.exports = function(passport) {
 
 	// used to serialize the user for the session
 	passport.serializeUser(function(user, done) {
-		done(null, user.local.email);
+		done(null, user.id);
 	});
 
 	// used to deserialize the user
-	passport.deserializeUser(function(email, done) {
-		User.findOne({'local.email': email}, function(err, user) {
+	passport.deserializeUser(function(id, done) {
+		User.findOne({'_id': id}, function(err, user) {
 			done(err, user);
 		});
 	});

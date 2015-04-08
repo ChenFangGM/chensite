@@ -2,7 +2,7 @@
 
 define([
 	'./portfolio-controller',
-	'./login-controller'
+	'./signup-controller'
 ], function () {
 	'use strict';
 });

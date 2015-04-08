@@ -6,8 +6,8 @@ require.config({
 		'require': 'libs/requirejs/require.js',
 		'angular': 'libs/angular/angular.min',
 		'angular-resource': 'libs/angular-resource/angular-resource.min',
+		'angular-cookies': 'libs/angular-cookies/angular-cookies.min',
 		'domReady': 'libs/requirejs-domready/domReady',
-		'angularRoute': 'libs/angular-route/angular-route.min',
 		'ui-router': 'libs/angular-ui-router/release/angular-ui-router.min',
 		'angularMocks': 'libs/angular-mocks/angular-mocks',
 		'jquery': 'libs/jquery/dist/jquery.min',
@@ -18,17 +18,15 @@ require.config({
 		'unityObject2': 'src/js/utilities/UnityObject2',
 		'mainPageUtility': 'src/js/utilities/main_page_utility',
 		'timelineModule': 'src/js/modules/timeline-module',
-		'todoController': 'src/js/controllers/todo-controller',
-		'todoService': 'src/js/services/todo-service',
-		'datePickerController': 'src/js/controllers/datePicker-controller',
 		'text': 'libs/requirejs-text/text',
 		'app': 'app',
-		'router': 'router'
+		'router-config': 'router'
 	},
 	// dependencies defined below
 	shim: {
 		'angular' : {'exports': 'angular'},
 		'angular-resource': {deps: ['angular']},
+		'angular-cookies': {deps: ['angular']},
 		'ui-router': {deps: ['angular']},
 		'ui-bootstrap': {deps: ['angular']},
 		'jquery-ui': {deps: ['jquery']}
@@ -40,11 +38,11 @@ require([
 	'require',
 	'angular',
 	'app',
-	'router',
+	'router-config',
 	'mainPageUtility'
 ],function(require, angular){
 	'use strict';
 	require(['domReady!'], function(document){
-		angular.bootstrap(document, ['mainApp']);
+		angular.bootstrap(document, ['chensiteApp']);
 	});
 });

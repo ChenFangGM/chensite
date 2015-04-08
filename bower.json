@@ -10,18 +10,21 @@
   "dependencies": {
     "angular": "latest",
     "angular-resource": "latest",
+    "angular-cookies": "latest",
+    "angular-sanitize": "latest",
+    "angular-http-auth": "latest",
     "angular-route": "latest",
     "angular-ui-router": "latest",
     "angular-bootstrap": "latest",
     "requirejs": "latest",
     "requirejs-domready": "latest",
-    "requirejs-text": "latest"
-  },
-  "devDependencies": {
+    "requirejs-text": "latest",
     "jquery": "latest",
     "bootstrap": "latest",
     "jquery-ui": "latest",
-    "font-awesome": "latest",
+    "font-awesome": "latest"
+  },
+  "devDependencies": {
     "animate.css": "latest",
     "angular-mocks": "latest",
     "sinon": "latest",

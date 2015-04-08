@@ -26,17 +26,13 @@ define([
 			// profile page
 			.state('profile', {
 				url: '/profile',
-				templateUrl: 'src/views/profile.html',
-				data: {
-					test: 'test_data_in_state'
-				}
+				templateUrl: 'src/views/profile.html'
 			})
 			.state('login-modal', {
 				abstract: true,
 				parent: 'home',
 				url: '/modal',
 				onEnter: ['$modal', '$state', function($modal, $state) {
-					console.log('Open modal');
 					$modal.open({
 						templateUrl: 'src/views/login-modal.html',
 						backdrop: false,
@@ -62,7 +58,8 @@ define([
 				parent: 'login-modal',
 				views: {
 					'login-modal@': {
-						templateUrl: 'src/views/signup.html'
+						templateUrl: 'src/views/signup.html',
+						controller: 'signupController'
 					}
 				}
 			});
