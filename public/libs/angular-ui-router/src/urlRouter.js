@@ -42,9 +42,9 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
    *
    * @example
    * <pre>
-   * var expressApp = angular.module('expressApp', ['ui.router.router']);
+   * var app = angular.module('app', ['ui.router.router']);
    *
-   * expressApp.config(function ($urlRouterProvider) {
+   * app.config(function ($urlRouterProvider) {
    *   // Here's an example of how you might allow case insensitive urls
    *   $urlRouterProvider.rule(function ($injector, $location) {
    *     var path = $location.path(),
@@ -78,9 +78,9 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
    *
    * @example
    * <pre>
-   * var expressApp = angular.module('expressApp', ['ui.router.router']);
+   * var app = angular.module('app', ['ui.router.router']);
    *
-   * expressApp.config(function ($urlRouterProvider) {
+   * app.config(function ($urlRouterProvider) {
    *   // if the path doesn't match any of the urls you configured
    *   // otherwise will take care of routing the user to the
    *   // specified url
@@ -138,9 +138,9 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
    *
    * @example
    * <pre>
-   * var expressApp = angular.module('expressApp', ['ui.router.router']);
+   * var app = angular.module('app', ['ui.router.router']);
    *
-   * expressApp.config(function ($urlRouterProvider) {
+   * app.config(function ($urlRouterProvider) {
    *   $urlRouterProvider.when($state.url, function ($match, $stateParams) {
    *     if ($state.$current.navigable !== state ||
    *         !equalForKeys($match, $stateParams) {
@@ -211,9 +211,9 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
    *
    * @example
    * <pre>
-   * var expressApp = angular.module('expressApp', ['ui.router.router']);
+   * var app = angular.module('app', ['ui.router.router']);
    *
-   * expressApp.config(function ($urlRouterProvider) {
+   * app.config(function ($urlRouterProvider) {
    *
    *   // Prevent $urlRouter from automatically intercepting URL changes;
    *   // this allows you to configure custom behavior in between
@@ -318,7 +318,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        *
        * @example
        * <pre>
-       * angular.module('expressApp', ['ui.router'])
+       * angular.module('app', ['ui.router'])
        *   .run(function($rootScope, $urlRouter) {
        *     $rootScope.$on('$locationChangeSuccess', function(evt) {
        *       // Halt state change from even starting

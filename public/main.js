@@ -14,13 +14,13 @@ require.config({
 		'jquery-ui': 'libs/jquery-ui/jquery-ui.min',
 		'bootstrap': 'libs/bootstrap/dist/js/bootstrap.min',
 		'ui-bootstrap': 'libs/angular-bootstrap/ui-bootstrap.min',
-
 		'unityObject2': 'src/js/utilities/UnityObject2',
 		'mainPageUtility': 'src/js/utilities/main_page_utility',
 		'timelineModule': 'src/js/modules/timeline-module',
 		'text': 'libs/requirejs-text/text',
 		'app': 'app',
-		'router-config': 'router'
+		'router': 'router',
+		'google-analytics': 'src/js/tracking/google_analytics'
 	},
 	// dependencies defined below
 	shim: {
@@ -38,8 +38,9 @@ require([
 	'require',
 	'angular',
 	'app',
-	'router-config',
-	'mainPageUtility'
+	'router',
+	'mainPageUtility',
+	'google-analytics'
 ],function(require, angular){
 	'use strict';
 	require(['domReady!'], function(document){

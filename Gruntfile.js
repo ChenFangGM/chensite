@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 							src.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
 					}
 				},
-				src: ['<%= project.js %>/directives/*.js'],
+				src: ['<%= project.js %>/directives/timeline/*.js'],
 				dest: '<%= project.js %>/modules/timeline-module.js'
 			}
 		},

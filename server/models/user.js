@@ -52,27 +52,14 @@ var UserSchema = mongoose.Schema({
  * Virtual Property
  */
 UserSchema
-	.virtual('password')
-	.set(function(password) {
-		this._password = password;
-		this.local.password = this.generateHash(password);
-	})
-	.get(function() {
-		return this._password;
-	});
-
-UserSchema
 	.virtual('user_info')
 	.get(function () {
-		return { '_id': this._id, 'username': this.local.username, 'email': this.local.email };
+		return { '_id': this._id, 'username': this.local.username, 'email': this.local.email, 'password': this.local.password };
 	});
 
 /**
  * Validations
  */
-var validatePresenceOf = function (value) {
-	return value && value.length;
-};
 // validate email format
 UserSchema.path('local.email').validate(function (email) {
 	var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -107,14 +94,16 @@ UserSchema.pre('save', function(next) {
 	if (!this.isNew) {
 		return next();
 	}
-	if (!validatePresenceOf(this.password)) {
+	if (!validatePresenceOf(this.local.password)) {
 		next(new Error('Invalid password'));
 	}
 	else {
 		next();
 	}
 });
-
+var validatePresenceOf = function (value) {
+	return value && value.length;
+};
 /**
  * Methods
  */

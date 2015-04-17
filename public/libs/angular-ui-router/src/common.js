@@ -216,7 +216,7 @@ function map(collection, callback) {
  * # ui.router.util sub-module
  *
  * This module is a dependency of other sub-modules. Do not include this module as a dependency
- * in your angular expressApp (use {@link ui.router} module instead).
+ * in your angular app (use {@link ui.router} module instead).
  *
  */
 angular.module('ui.router.util', ['ng']);
@@ -231,7 +231,7 @@ angular.module('ui.router.util', ['ng']);
  * # ui.router.router sub-module
  *
  * This module is a dependency of other sub-modules. Do not include this module as a dependency
- * in your angular expressApp (use {@link ui.router} module instead).
+ * in your angular app (use {@link ui.router} module instead).
  */
 angular.module('ui.router.router', ['ui.router.util']);
 
@@ -246,7 +246,7 @@ angular.module('ui.router.router', ['ui.router.util']);
  * # ui.router.state sub-module
  *
  * This module is a dependency of the main ui.router module. Do not include this module as a dependency
- * in your angular expressApp (use {@link ui.router} module instead).
+ * in your angular app (use {@link ui.router} module instead).
  * 
  */
 angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
@@ -262,17 +262,17 @@ angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
  * 
  * ## The main module for ui.router 
  * There are several sub-modules included with the ui.router module, however only this module is needed
- * as a dependency within your angular expressApp. The other modules are for organization purposes.
+ * as a dependency within your angular app. The other modules are for organization purposes. 
  *
  * The modules are:
  * * ui.router - the main "umbrella" module
  * * ui.router.router - 
  * 
- * *You'll need to include **only** this module as the dependency within your angular expressApp.*
+ * *You'll need to include **only** this module as the dependency within your angular app.*
  * 
  * <pre>
  * <!doctype html>
- * <html ng-expressApp="myApp">
+ * <html ng-app="myApp">
  * <head>
  *   <script src="js/angular.js"></script>
  *   <!-- Include the ui-router script -->

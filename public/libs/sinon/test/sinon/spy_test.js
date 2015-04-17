@@ -44,6 +44,12 @@ if (typeof require === "function" && typeof module === "object") {
                 assert.isFalse(this.spy[method](1, 2, 3));
             },
 
+            "returns false if not called with undefined": function () {
+                this.spy();
+
+                assert.isFalse(this.spy[method](undefined));
+            },
+
             "returns true for partial match": function () {
                 this.spy(1, 3, 3);
                 this.spy(2);
@@ -2156,6 +2162,13 @@ if (typeof require === "function" && typeof module === "object") {
         },
 
         ".reset": {
+            "return same object": function () {
+                var spy = sinon.spy();
+                var reset = spy.reset();
+
+                assert(reset === spy);
+            },
+
             "throws if called during spy invocation": function () {
                 var spy = sinon.spy(function () {
                     spy.reset();
@@ -2164,6 +2177,21 @@ if (typeof require === "function" && typeof module === "object") {
                 assert.exception(function () {
                     spy();
                 }, "InvalidResetException");
+            }
+        },
+
+        ".length": {
+            "is zero by default": function () {
+                var spy = sinon.spy();
+
+                assert.equals(spy.length, 0);
+            },
+
+            "matches the function length": function () {
+                var api = { someMethod: function (a, b, c) {} };
+                var spy = sinon.spy(api, "someMethod");
+
+                assert.equals(spy.length, 3);
             }
         }
     });

@@ -6,10 +6,11 @@ define([
 	'ui-bootstrap',
 	'angular-cookies',
 	'angular-resource',
-	'src/js/controllers/controller-index'
-	//'./directives/index',
+	'src/js/controllers/controller-index',
+	'src/js/services/service-index',
+	'src/js/directives/directive-index'
 	//'./filters/index',
-	//'./services/index'
+
 ], function (angular) {
 	'use strict';
 	var app = angular.module('chensiteApp', [
@@ -17,8 +18,9 @@ define([
 		'ui.bootstrap',
 		'ngCookies',
 		'ngResource',
-		'controllerManager'
-		//'app.services'
+		'controllerManager',
+		'serviceManager',
+		'directiveManager'
 		//'app.filters',
 		//'app.directives'
 	]);

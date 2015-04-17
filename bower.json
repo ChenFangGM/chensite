@@ -8,9 +8,9 @@
     "love, angular, photo, timeline"
   ],
   "dependencies": {
-    "angular": "latest",
+    "angular": "v1.4.0-build.3961+sha.8bf5654",
     "angular-resource": "latest",
-    "angular-cookies": "latest",
+    "angular-cookies": "v1.4.0-build.3961+sha.8bf5654",
     "angular-sanitize": "latest",
     "angular-http-auth": "latest",
     "angular-route": "latest",

@@ -2,6 +2,7 @@
 
 define([
 	'./portfolio-controller',
+	'./profile-controller',
 	'./signup-controller'
 ], function () {
 	'use strict';

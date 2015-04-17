@@ -1,13 +1,14 @@
 // server/routes.js
 
 var path = require('path');
-var appDir = path.dirname(require.main.filename);
+var passport = require('passport');
 var auth = require('./config/auth');
+var appDir = path.dirname(require.main.filename);
 // load the todo model
 //var Todo = require('./models/todoModel');
 
 // expose the routes to our expressApp with module.exports
-module.exports = function(expressApp, passport) {
+module.exports = function(expressApp) {
 
 // api ---------------------------------------------------------------------
 	// process the signup form
@@ -27,13 +28,13 @@ module.exports = function(expressApp, passport) {
 	}));
 
 	// User Routes
-	var users = require('./controllers/users');
-	expressApp.post('/auth/users', users.create);
-	expressApp.get('/auth/users/:userId', users.show);
+	var user = require('./controllers/user');
+	expressApp.post('/auth/user', user.create);
+	expressApp.get('/auth/user/:userId', user.show);
 
 	// Check if username is available
 	// todo: probably should be a query on users
-	expressApp.get('/auth/check_username/:username', users.exists);
+	expressApp.get('/auth/check_username/:username', user.exists);
 
 	// Session Routes
 	var session = require('./controllers/session');

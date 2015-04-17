@@ -1,11 +1,11 @@
-'use strict';
+// src/js/services/user-service.js
+
 define([
-	'angular',
-	'app'
-], function(angular){
-	angular.module('chensiteApp')
-		.factory('User', function ($resource) {
-			var User = $resource('/auth/users/:id/', {},
+	'./service-manager'
+], function(serviceManager){
+	'use strict';
+	serviceManager.factory('User', function ($resource) {
+			var User = $resource('/auth/user/:id', {},
 				{
 					'update': {
 						method:'PUT'

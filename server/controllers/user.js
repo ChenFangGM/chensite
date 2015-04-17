@@ -11,18 +11,21 @@ var ObjectId = mongoose.Types.ObjectId;
  * returns: {email, password}
  */
 exports.create = function (req, res, next) {
-  var newUser = new User(req.body);
-  newUser.provider = 'local';
-  newUser.save(function(err) {
-    if (err) {
-      return res.json(400, err);
-    }
-
-    req.logIn(newUser, function(err) {
-      if (err) return next(err);
-      return res.json(newUser.user_info);
-    });
-  });
+	var newUser = new User();
+	newUser.local.email    = req.body.local.email;
+	newUser.local.username = req.body.local.username;
+	newUser.local.password = newUser.generateHash(req.body.local.password);
+	// save the user to database
+	newUser.save(function(err) {
+		if (err){
+			//throw err;
+			return res.json(400).json(err);
+		}
+		req.logIn(newUser, function(err) {
+			if (err) {return next(err);}
+			return res.json(newUser.user_info);
+		});
+	});
 };
 
 /**

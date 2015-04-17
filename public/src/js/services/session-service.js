@@ -1,11 +1,10 @@
-'use strict';
-define([
-	'angular',
-	'app'
-], function(){
+// src/js/services/session-service.js
 
-});
-angular.module('chensiteApp')
-	.factory('Session', function ($resource) {
+define([
+	'./service-manager'
+], function(serviceManager){
+	'use strict';
+	serviceManager.factory('Session', function ($resource) {
 		return $resource('/auth/session/');
 	});
+});

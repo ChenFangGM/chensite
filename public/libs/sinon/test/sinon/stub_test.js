@@ -519,11 +519,11 @@ buster.testCase("sinon.stub", {
             assert.isFunction(stub.restore);
         },
 
-        "throws if third argument is provided but not function": function () {
+        "throws if third argument is provided but not a function or proprety descriptor": function () {
             var object = this.object;
 
             assert.exception(function () {
-                sinon.stub(object, "method", {});
+                sinon.stub(object, "method", 1);
             }, "TypeError");
         },
 
@@ -773,6 +773,111 @@ buster.testCase("sinon.stub", {
         "plays nice with returnsThis": function () {
             var obj = {};
             var stub = sinon.stub().returnsThis().yields();
+            var spy = sinon.spy();
+            assert.same(stub.call(obj, spy), obj);
+            assert(spy.calledOnce);
+        }
+    },
+
+    ".yieldsRight": {
+        "invokes only argument as callback": function () {
+            var stub = sinon.stub().yieldsRight();
+            var spy = sinon.spy();
+            stub(spy);
+
+            assert(spy.calledOnce);
+            assert.equals(spy.args[0].length, 0);
+        },
+
+        "throws understandable error if no callback is passed": function () {
+            var stub = sinon.stub().yieldsRight();
+
+            try {
+                stub();
+                throw new Error();
+            } catch (e) {
+                assert.equals(e.message, "stub expected to yield, but no callback was passed.");
+            }
+        },
+
+        "includes stub name and actual arguments in error": function () {
+            var myObj = { somethingAwesome: function () {} };
+            var stub = sinon.stub(myObj, "somethingAwesome").yieldsRight();
+
+            try {
+                stub(23, 42);
+                throw new Error();
+            } catch (e) {
+                assert.equals(e.message, "somethingAwesome expected to yield, but no callback " +
+                "was passed. Received [23, 42]");
+            }
+        },
+
+        "invokes last argument as callback": function () {
+            var stub = sinon.stub().yieldsRight();
+            var spy = sinon.spy();
+            stub(24, {}, spy);
+
+            assert(spy.calledOnce);
+            assert.equals(spy.args[0].length, 0);
+        },
+
+        "invokes the last of two callbacks": function () {
+            var stub = sinon.stub().yieldsRight();
+            var spy = sinon.spy();
+            var spy2 = sinon.spy();
+            stub(24, {}, spy, spy2);
+
+            assert(!spy.called);
+            assert(spy2.calledOnce);
+        },
+
+        "invokes callback with arguments": function () {
+            var obj = { id: 42 };
+            var stub = sinon.stub().yieldsRight(obj, "Crazy");
+            var spy = sinon.spy();
+            stub(spy);
+
+            assert(spy.calledWith(obj, "Crazy"));
+        },
+
+        "throws if callback throws": function () {
+            var obj = { id: 42 };
+            var stub = sinon.stub().yieldsRight(obj, "Crazy");
+            var callback = sinon.stub().throws();
+
+            assert.exception(function () {
+                stub(callback);
+            });
+        },
+
+        "plays nice with throws": function () {
+            var stub = sinon.stub().throws().yieldsRight();
+            var spy = sinon.spy();
+            assert.exception(function () {
+                stub(spy);
+            });
+            assert(spy.calledOnce);
+        },
+
+        "plays nice with returns": function () {
+            var obj = {};
+            var stub = sinon.stub().returns(obj).yieldsRight();
+            var spy = sinon.spy();
+            assert.same(stub(spy), obj);
+            assert(spy.calledOnce);
+        },
+
+        "plays nice with returnsArg": function () {
+            var stub = sinon.stub().returnsArg(0).yieldsRight();
+            var spy = sinon.spy();
+            assert.same(stub(spy), spy);
+            assert(spy.calledOnce);
+        },
+
+        "plays nice with returnsThis": function () {
+            var obj = {};
+            var stub = sinon.stub().returnsThis().yieldsRight();
             var spy = sinon.spy();
             assert.same(stub.call(obj, spy), obj);
             assert(spy.calledOnce);
@@ -1609,6 +1714,21 @@ buster.testCase("sinon.stub", {
                 assert(fakeB.calledOnce);
                 assert(fakeC.calledOnce);
             }
+        }
+    },
+
+    ".length": {
+        "is zero by default": function () {
+            var stub = sinon.stub();
+
+            assert.equals(stub.length, 0);
+        },
+
+        "matches the function length": function () {
+            var api = { someMethod: function (a, b, c) {} };
+            var stub = sinon.stub(api, "someMethod");
+
+            assert.equals(stub.length, 3);
         }
     }
 

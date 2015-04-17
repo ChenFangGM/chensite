@@ -27,7 +27,6 @@ db.once('open', function callback() { console.log('Database connected');});
 require('./server/config/passport')(passport); // pass passport for configuration
 
 // set up express application
-
 // set the static files location /public/img will be /img for users
 expressApp.use(express.static(__dirname + '/public'));
 // set view engine to ejs
@@ -51,9 +50,9 @@ expressApp.use(session({
 }));
 // persist user in sessions
 expressApp.use( function (req, res, next) {
-	if ( req.method == 'POST' && req.url == '/#/login' ) {
-		if ( false ) {
-			req.session.cookie.maxAge = 2592000000; // 30*24*60*60*1000 persist 'user' for 30 days
+	if ( req.method == 'POST' && req.url == '/#/modal/login' ) {
+		if ( true ) {
+			req.session.cookie.maxAge = 259200000; // 3*24*60*60*1000 persist 'user' for 3 days
 		} else {
 			req.session.cookie.expires = false;
 		}
@@ -67,7 +66,7 @@ expressApp.use(flash()); // use connect-flash for flash messages stored in sessi
 
 
 // routes ======================================================================
-require('./server/routes.js')(expressApp, passport); // load our routes and pass in our app and fully configured passport
+require('./server/routes.js')(expressApp); // load our routes and pass in our app and fully configured passport
 
 // listen (start expressApp with node server.js) ======================================
 expressApp.listen(port);

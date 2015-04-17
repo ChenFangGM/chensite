@@ -13,9 +13,10 @@
       <div class="well">
         <h3><span class="fa fa-user"></span> Local</h3>
         <p>
-          <strong>id</strong><span id="test1">: </span><br>
-          <strong>email</strong>: <%= user.local.email %><br>
-          <strong>password</strong>: <%= user.local.password %>
+          <strong>id</strong>:{{currentUser._id?currentUser._id:''}}<br>
+          <strong>email</strong>:{{currentUser.email?currentUser.email:''}}<br>
+          <strong>Nickname</strong>:{{currentUser.username?currentUser.username:''}}<br>
+          <strong>password</strong>:{{currentUser.password?currentUser.password:''}}
         </p>
       </div>
     </div>

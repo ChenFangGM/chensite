@@ -4,35 +4,30 @@ define([
 ], function (app) {
 	'use strict';
 	app.config(function($stateProvider, $urlRouterProvider){
-
-		$urlRouterProvider.otherwise('');
-
+		$urlRouterProvider.otherwise('/');
 		$stateProvider
 			.state('home', {
-				url: '',
+				url: '/',
 				templateUrl: 'src/views/about.html'
 			})
-			// about page
 			.state('about', {
 				url: '/about',
 				templateUrl: 'src/views/about.html'
 			})
-			// portfolio page
 			.state('portfolio', {
 				url: '/portfolio',
 				templateUrl: 'src/views/portfolio.html',
 				controller: 'portfolioController'
 			})
-			// profile page
 			.state('profile', {
 				url: '/profile',
-				templateUrl: 'src/views/profile.html'
+				templateUrl: 'src/views/profile.html',
+				controller: 'profileController'
 			})
 			.state('login-modal', {
 				abstract: true,
-				parent: 'home',
 				url: '/modal',
-				onEnter: ['$modal', '$state', function($modal, $state) {
+				onEnter: function($modal, $state){
 					$modal.open({
 						templateUrl: 'src/views/login-modal.html',
 						backdrop: false,
@@ -40,9 +35,9 @@ define([
 						windowClass: 'right fade',
 						size: 'sm'
 					}).result.finally(function() {
-							$state.go('home');
+							$state.go('profile');
 						});
-				}]
+				}
 			})
 			.state('login-modal.login', {
 				url: '/login',

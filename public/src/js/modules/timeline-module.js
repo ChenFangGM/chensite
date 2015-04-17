@@ -1,6 +1,6 @@
 'use strict';
 angular.module('angular-timeline', []);
-// Source: public/src/js/directives/timeline-badge-directive.js
+// Source: public/src/js/directives/timeline/timeline-badge-directive.js
 angular.module('angular-timeline').directive('timelineBadge', function() {
   return {
     require: '^timelineNode',
@@ -12,7 +12,7 @@ angular.module('angular-timeline').directive('timelineBadge', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-content-directive.js
+// Source: public/src/js/directives/timeline/timeline-content-directive.js
 angular.module('angular-timeline').directive('timelineContent', function() {
   return {
     require: '^timelinePanel',
@@ -25,7 +25,7 @@ angular.module('angular-timeline').directive('timelineContent', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-directive.js
+// Source: public/src/js/directives/timeline/timeline-directive.js
 angular.module('angular-timeline').directive('timeline', function() {
   return {
     restrict: 'E',
@@ -37,7 +37,7 @@ angular.module('angular-timeline').directive('timeline', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-footer-directive.js
+// Source: public/src/js/directives/timeline/timeline-footer-directive.js
 angular.module('angular-timeline').directive('timelineFooter', function() {
   return {
     require: '^timelineContent',
@@ -49,7 +49,7 @@ angular.module('angular-timeline').directive('timelineFooter', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-heading-directive.js
+// Source: public/src/js/directives/timeline/timeline-heading-directive.js
 angular.module('angular-timeline').directive('timelineHeading', function() {
   return {
     require: '^timelinePanel',
@@ -62,7 +62,7 @@ angular.module('angular-timeline').directive('timelineHeading', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-node-directive.js
+// Source: public/src/js/directives/timeline/timeline-node-directive.js
 angular.module('angular-timeline').directive('timelineNode', function() {
   return {
     require: '^timeline',
@@ -78,7 +78,7 @@ angular.module('angular-timeline').directive('timelineNode', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-panel-directive.js
+// Source: public/src/js/directives/timeline/timeline-panel-directive.js
 angular.module('angular-timeline').directive('timelinePanel', function() {
   return {
     require: '^timeline',
@@ -91,7 +91,7 @@ angular.module('angular-timeline').directive('timelinePanel', function() {
   };
 });
 
-// Source: public/src/js/directives/timeline-title-directive.js
+// Source: public/src/js/directives/timeline/timeline-title-directive.js
 angular.module('angular-timeline').directive('timelineTitle', function() {
   return {
     require: '^timelineHeading',

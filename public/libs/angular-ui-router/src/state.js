@@ -793,9 +793,9 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *
      * @example
      * <pre>
-     * var expressApp angular.module('expressApp', ['ui.router']);
+     * var app angular.module('app', ['ui.router']);
      *
-     * expressApp.controller('ctrl', function ($scope, $state) {
+     * app.controller('ctrl', function ($scope, $state) {
      *   $scope.reload = function(){
      *     $state.reload();
      *   }
@@ -831,9 +831,9 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *
      * @example
      * <pre>
-     * var expressApp = angular.module('expressApp', ['ui.router']);
+     * var app = angular.module('app', ['ui.router']);
      *
-     * expressApp.controller('ctrl', function ($scope, $state) {
+     * app.controller('ctrl', function ($scope, $state) {
      *   $scope.changeState = function () {
      *     $state.go('contact.detail');
      *   };
@@ -897,9 +897,9 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      *
      * @example
      * <pre>
-     * var expressApp = angular.module('expressApp', ['ui.router']);
+     * var app = angular.module('app', ['ui.router']);
      *
-     * expressApp.controller('ctrl', function ($scope, $state) {
+     * app.controller('ctrl', function ($scope, $state) {
      *   $scope.changeState = function () {
      *     $state.transitionTo('contact.detail');
      *   };
