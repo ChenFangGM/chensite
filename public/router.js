@@ -30,11 +30,11 @@ define([
 				onEnter: function($modal, $state){
 					$modal.open({
 						templateUrl: 'src/views/login-modal.html',
-						backdrop: false,
+						backdrop: true,
 						keyboard: false,
-						windowClass: 'right fade',
+						windowClass: 'login-modal right fade',
 						size: 'sm'
-					}).result.finally(function() {
+					}).result.then(function() {
 							$state.go('profile');
 						});
 				}

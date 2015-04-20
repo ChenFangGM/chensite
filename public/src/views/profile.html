@@ -1,24 +1,19 @@
 <!-- src/views/profile.html -->
 
-<div class="container">
-  <div class="page-header text-center">
+<article class="page profile">
+  <header class="page-header text-center">
     <h1><span class="fa fa-anchor"></span> Profile Page</h1>
     <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-  </div>
-
-  <div class="row">
-
-    <!-- LOCAL INFORMATION -->
-    <div class="col-sm-6">
-      <div class="well">
-        <h3><span class="fa fa-user"></span> Local</h3>
-        <p>
-          <strong>id</strong>:{{currentUser._id?currentUser._id:''}}<br>
-          <strong>email</strong>:{{currentUser.email?currentUser.email:''}}<br>
-          <strong>Nickname</strong>:{{currentUser.username?currentUser.username:''}}<br>
-          <strong>password</strong>:{{currentUser.password?currentUser.password:''}}
-        </p>
-      </div>
+  </header>
+  <main class="userinfo">
+    <div class="well">
+      <h3><span class="fa fa-user"></span> Local</h3>
+      <p>
+        <strong>id</strong>: {{currentUser._id?currentUser._id:''}}<br>
+        <strong>email</strong>: {{currentUser.email?currentUser.email:''}}<br>
+        <strong>Nickname</strong>: {{currentUser.username?currentUser.username:''}}<br>
+        <strong>password</strong>: {{currentUser.password?currentUser.password:''}}
+      </p>
     </div>
-  </div>
-</div>
+  </main>
+</article>

@@ -3,7 +3,7 @@ define([
 	'./controller-manager'
 ], function (controllerManager) {
 	'use strict';
-	controllerManager.controller('signupController', function ($scope, $state, Auth) {
+	controllerManager.controller('signupController', function ($scope, $rootScope, $state, Auth) {
 		$scope.register = function(form) {
 			Auth.createUser({
 					'local':{
@@ -25,5 +25,10 @@ define([
 				}
 			);
 		};
+
+		$rootScope.$on('$stateChangeStart',
+			function(event, toState, toParams, fromState, fromParams){
+				$scope.$dismiss();
+			})
 	});
 });

@@ -39,7 +39,6 @@ require([
 	'angular',
 	'app',
 	'router',
-	'mainPageUtility',
 	'google-analytics'
 ],function(require, angular){
 	'use strict';

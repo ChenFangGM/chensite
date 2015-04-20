@@ -5,10 +5,26 @@
 <head>
   <!-- META -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-  <meta name="description" content="Software Developer Chen Fang's Personal Website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="software developer Chen Fang's playground that help him learn & share">
+  <meta name="keywords" content="Play, Share, HTML5, CSS3, JavaScript, AngularJs, NodeJs, MEAN, JSON, XHTML, Game">
   <meta name="author" content="Chen Fang">
-  <meta name="keywords" content="HTML5, CSS3, JavaScript, AngularJs, NodeJs, MEAN, JSON, XHTML, Game">
+  <meta property="og:title" content="Visit Chen-Fang.COM" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://chen-fang.com" />
+  <meta property="og:image" content="http://chen-fang.com/dist/img/profile/knightf.jpg" />
+  <meta property="og:description" content="software developer Chen Fang's playground that help him learn & share">
+  <link href="http://chen-fang.come" rel="canonical">
+  <!--
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@branded_me">
+  <meta name="twitter:title" content="Create Your Brand">
+  <meta name="twitter:description" content="Build a fully customizable Personal Website in seconds - for free.">
+  <meta name="twitter:image" content="https://branded.me/img/artboard.jpg">
+  <link rel="icon" href="/img/favicon.ico">
+  <title ng-bind="$state.current.data.pageTitle || 'chen-fang.com'" class="ng-binding">Home / chen-fang.com</title>
+  -->
   <title>Chen Fang - Software Engineer + Game Developer</title>
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css">
@@ -16,7 +32,55 @@
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
 </head>
 <body ng-app="">
-<header id="header_main">
+<nav style="display: none">
+  <a class="hamburger">
+    <small>Menu</small>
+  </a>
+  <div style="display: none;">
+    <a href="#5530bcd7158b1b000329b624" class="active">
+      <small>Chen's bio</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b625" class="">
+      <small>Experience</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b626">
+      <small>Education</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b627" class="">
+      <small>Projects</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b628">
+      <small>Skills</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b629">
+      <small>Testimonials</small>
+    </a>
+    <a href="#5530bcd7158b1b000329b62a">
+      <small>Gallery</small>
+    </a> <a href="#5530bcd7158b1b000329b62b">
+    <small>Contact</small>
+  </a>
+  </div>
+</nav>
+</div>
+<aside class="sidebar">
+  <header class="sidebar-header">
+    <h1><a ui-sref="home">Chen-Fang.COM</a></h1>
+    <h2>work hard & share more</h2>
+  </header>
+  <nav>
+    <a ui-sref="about">
+      <h4>Chen's Bio</h4>
+    </a>
+    <a ui-sref="portfolio">
+      <h4>Portfolio</h4>
+    </a>
+    <a ui-sref="profile">
+      <h4>Profile</h4>
+    </a>
+  </nav>
+</aside>
+<!--<header id="header_main">
   <div class="chen">
     <img class="avatar" src="dist/img/profile/myselfie.png" alt="Chen">
     <h1 id="test1"></h1>
@@ -29,7 +93,8 @@
     </div>
   </div>
 </header>
-<div id="container_main">
+-->
+<div class="container_main">
   <!--[if lt IE 7]>
   <!-- <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -37,25 +102,14 @@
   <!--<script src="bower_components/es5-shim/es5-shim.js"></script>
   <script src="bower_components/json3/lib/json3.min.js"></script>
   <![endif]-->
-  <div id="dash">
-    <div id="wrapper">
-      <h2><span class="glyphicon glyphicon-home"></span> Dash Board </h2>
-      <a ui-sref="about">About</a>
-      <p>&middot;</p>
-      <a ui-sref="portfolio">Portfolio</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-md-10 col-md-offset-1">
-      <div id="page">
-        <div ui-view></div>
-      </div>
-    </div>
-  </div>
+  <main class="docker">
+    <div ui-view></div>
+  </main>
+  <footer class="footer_main">
+    <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
+  </footer>
 </div>
-<footer id="footer_main">
-  <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
-</footer>
+
 <!-- JS -->
 <script data-main="main" src="libs/requirejs/require.js"></script>
 </body>
