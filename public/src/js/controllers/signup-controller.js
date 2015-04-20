@@ -29,6 +29,6 @@ define([
 		$rootScope.$on('$stateChangeStart',
 			function(event, toState, toParams, fromState, fromParams){
 				$scope.$dismiss();
-			})
+			});
 	});
 });
