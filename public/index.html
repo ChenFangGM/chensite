@@ -32,36 +32,6 @@
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
 </head>
 <body ng-app="">
-<nav style="display: none">
-  <a class="hamburger">
-    <small>Menu</small>
-  </a>
-  <div style="display: none;">
-    <a href="#5530bcd7158b1b000329b624" class="active">
-      <small>Chen's bio</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b625" class="">
-      <small>Experience</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b626">
-      <small>Education</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b627" class="">
-      <small>Projects</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b628">
-      <small>Skills</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b629">
-      <small>Testimonials</small>
-    </a>
-    <a href="#5530bcd7158b1b000329b62a">
-      <small>Gallery</small>
-    </a> <a href="#5530bcd7158b1b000329b62b">
-    <small>Contact</small>
-  </a>
-  </div>
-</nav>
 </div>
 <aside class="sidebar">
   <header class="sidebar-header">
@@ -78,37 +48,19 @@
     <a ui-sref="profile">
       <h4>Profile</h4>
     </a>
+    <a ui-sref="login-modal.signup">
+      <h4>SignUp</h4>
+    </a>
   </nav>
 </aside>
-<!--<header id="header_main">
-  <div class="chen">
-    <img class="avatar" src="dist/img/profile/myselfie.png" alt="Chen">
-    <h1 id="test1"></h1>
-    <h2>Chen Fang</h2>
-    <p>Full-Stack Software Engineer <span id="dev-title">& Game Developer</span></p>
-    <div class="social">
-      <a class="linkedin" href="https://www.linkedin.com/in/chenfanggm">LinkedIn</a>
-      <a class="github" href="https://github.com/chenfanggm">Github</a>
-      <a class="email" href="mailto:fangchengm@gmail.com">Email me</a>
-    </div>
-  </div>
-</header>
--->
-<div class="container_main">
-  <!--[if lt IE 7]>
-  <!-- <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-  <!--[if lt IE 9]>
-  <!--<script src="bower_components/es5-shim/es5-shim.js"></script>
-  <script src="bower_components/json3/lib/json3.min.js"></script>
-  <![endif]-->
-  <main class="docker">
+<main class="main_container">
+  <div class="docker">
     <div ui-view></div>
-  </main>
-  <footer class="footer_main">
-    <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
-  </footer>
-</div>
+    <footer class="footer_main">
+      <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
+    </footer>
+  </div>
+</main>
 
 <!-- JS -->
 <script data-main="main" src="libs/requirejs/require.js"></script>

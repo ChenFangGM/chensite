@@ -5,11 +5,6 @@ var User = require('../models/user');
 var passport = require('passport');
 var ObjectId = mongoose.Types.ObjectId;
 
-/**
- * Create user
- * requires: {username, password, email}
- * returns: {email, password}
- */
 exports.create = function (req, res, next) {
 	var newUser = new User();
 	newUser.local.email    = req.body.local.email;
@@ -18,8 +13,7 @@ exports.create = function (req, res, next) {
 	// save the user to database
 	newUser.save(function(err) {
 		if (err){
-			//throw err;
-			return res.json(400).json(err);
+			throw err;
 		}
 		req.logIn(newUser, function(err) {
 			if (err) {return next(err);}
@@ -28,10 +22,6 @@ exports.create = function (req, res, next) {
 	});
 };
 
-/**
- *  Show profile
- *  returns {username, profile}
- */
 exports.show = function (req, res, next) {
   var userId = req.params.userId;
 
@@ -47,10 +37,6 @@ exports.show = function (req, res, next) {
   });
 };
 
-/**
- *  Username exists
- *  returns {exists}
- */
 exports.exists = function (req, res, next) {
   var username = req.params.username;
   User.findOne({ username : username }, function (err, user) {

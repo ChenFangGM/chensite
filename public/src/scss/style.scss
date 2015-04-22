@@ -1,6 +1,7 @@
-// changes for ui.bootstrap
+/* changes for ui.bootstrap */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+/* General */
 html{
   height: 100%;
   overflow-y: scroll;
@@ -20,6 +21,11 @@ img{
 img.preload {
   display: none;
 }
+/* End General */
+
+/* */
+
+/* Main Doc */
 
 /* sidebar */
 .sidebar{
@@ -57,7 +63,7 @@ img.preload {
 }
 
 /* main container */
-.container_main {
+.main_container {
   position: relative;
   float: right;
   overflow-x: hidden;
@@ -65,30 +71,43 @@ img.preload {
   height: 100%;
   background: #f1f1f1;
   border-left: solid 1px #e0e0e0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  padding: 0 5% 0 5%;
   .docker{
-    min-height: 500px;
+    position: relative;
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     .page{
-      width: 90%;
-      margin: 0 auto;
       padding: 20px 0 20px 0;
       background-color: white;
       box-shadow: 0 0 5px rgba(0,0,0,.2);
     }
-  }
-
-  .footer_main{
-    text-align: center;
-    p{
-      padding: 5px;
+    .footer_main{
+      margin-top: 30px;
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      > p{
+        margin: 0;
+      }
     }
   }
 }
 
+/* End Main Doc */
+
+/* */
+
+/* Page App */
 .page.about{
   .mid-page{
-    margin-left: 5%;
     .wrapper{
       width: 320px;
     }
@@ -151,11 +170,11 @@ img.preload {
     }
   }
   .right-page{
-    margin-left: 6%;
+    margin-left: 30px;
     .img-wrapper{
       max-width: 350px;
-      min-width: 265px;
-      margin-top: 80px;
+      min-width: 220px;
+      margin: 80px auto;
     }
   }
 }
@@ -306,6 +325,9 @@ div#timeline-form{
 
 /*==========  Responsive  ==========*/
 @media screen and (max-width: 991px) {
+  .docker{
+    margin-top: 30px;
+  }
   .page.about{
     .mid-page{
       margin: 0;
@@ -322,31 +344,41 @@ div#timeline-form{
   }
 }
 
+/* Small Devices, Tablets */
 @media screen and (max-width: 917px) {
   .sidebar{
     display: none;
   }
-  .container_main{
+  .main_container{
     width: 100%;
-    .page.about{
-      display: block;
-      width: 80%;
+    .docker{
+      margin-top: 30px;
+    }
+  }
+  .page.about{
+    .right-page{
+      .img-wrapper{
+        margin: 0 auto;
+      }
     }
   }
 }
 
-/* Small Devices, Tablets */
-@media screen and (max-width: 640px) {
-
+/* Extra Small Devices, Phones */
+@media screen and (max-width: 768px) {
+  .main_container{
+    width: 100%;
+    padding: 0 5% 0 %5;
+  }
 }
 
 /* Extra Small Devices, Phones */
-@media screen and (max-width: 450px) {
-  .container_main{
+@media screen and (max-width: 512px) {
+  .main_container{
     width: 100%;
-    .page.about{
-      display: block;
-      width: 100%;
+    padding: 0;
+    .docker{
+      padding: 0;
     }
   }
 }

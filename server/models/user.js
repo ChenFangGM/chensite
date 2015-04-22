@@ -48,18 +48,13 @@ var UserSchema = mongoose.Schema({
 	}
 });
 
-/**
- * Virtual Property
- */
+// virtual property
 UserSchema
 	.virtual('user_info')
 	.get(function () {
 		return { '_id': this._id, 'username': this.local.username, 'email': this.local.email, 'password': this.local.password };
 	});
 
-/**
- * Validations
- */
 // validate email format
 UserSchema.path('local.email').validate(function (email) {
 	var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
@@ -87,9 +82,7 @@ UserSchema.path('local.username').validate(function(value, respond) {
 	});
 }, 'The specified username is already in use.');
 
-/**
- * Pre-save hook
- */
+// pre-save
 UserSchema.pre('save', function(next) {
 	if (!this.isNew) {
 		return next();
@@ -104,9 +97,8 @@ UserSchema.pre('save', function(next) {
 var validatePresenceOf = function (value) {
 	return value && value.length;
 };
-/**
- * Methods
- */
+
+// method
 UserSchema.methods = {
 	// generating a hashed password
 	generateHash: function(password) {

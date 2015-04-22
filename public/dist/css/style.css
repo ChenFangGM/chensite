@@ -1,7 +1,9 @@
+/* changes for ui.bootstrap */
 .nav, .pagination, .carousel, .panel-title a {
   cursor: pointer;
 }
 
+/* General */
 html {
   height: 100%;
   overflow-y: scroll;
@@ -22,6 +24,9 @@ img.preload {
   display: none;
 }
 
+/* End General */
+/* */
+/* Main Doc */
 /* sidebar */
 .sidebar {
   position: fixed;
@@ -58,7 +63,7 @@ img.preload {
 }
 
 /* main container */
-.container_main {
+.main_container {
   position: relative;
   float: right;
   overflow-x: hidden;
@@ -66,29 +71,39 @@ img.preload {
   height: 100%;
   background: #f1f1f1;
   border-left: solid 1px #e0e0e0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  padding: 0 5% 0 5%;
 }
-.container_main .docker {
-  min-height: 500px;
+.main_container .docker {
+  position: relative;
   padding-top: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-.container_main .docker .page {
-  width: 90%;
-  margin: 0 auto;
+.main_container .docker .page {
   padding: 20px 0 20px 0;
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.container_main .footer_main {
+.main_container .docker .footer_main {
+  margin-top: 30px;
+  padding: 15px;
   text-align: center;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-.container_main .footer_main p {
-  padding: 5px;
+.main_container .docker .footer_main > p {
+  margin: 0;
 }
 
-.page.about .mid-page {
-  margin-left: 5%;
-}
+/* End Main Doc */
+/* */
+/* Page App */
 .page.about .mid-page .wrapper {
   width: 320px;
 }
@@ -150,12 +165,12 @@ img.preload {
   padding-left: 20px;
 }
 .page.about .right-page {
-  margin-left: 6%;
+  margin-left: 30px;
 }
 .page.about .right-page .img-wrapper {
   max-width: 350px;
-  min-width: 265px;
-  margin-top: 80px;
+  min-width: 220px;
+  margin: 80px auto;
 }
 
 .page.profile .userinfo {
@@ -286,6 +301,10 @@ div#timeline-form button#timeline-add-btn {
 }
 /*==========  Responsive  ==========*/
 @media screen and (max-width: 991px) {
+  .docker {
+    margin-top: 30px;
+  }
+
   .page.about .mid-page {
     margin: 0;
   }
@@ -299,28 +318,38 @@ div#timeline-form button#timeline-add-btn {
     margin: 0 auto;
   }
 }
+/* Small Devices, Tablets */
 @media screen and (max-width: 917px) {
   .sidebar {
     display: none;
   }
 
-  .container_main {
+  .main_container {
     width: 100%;
   }
-  .container_main .page.about {
-    display: block;
-    width: 80%;
+  .main_container .docker {
+    margin-top: 30px;
+  }
+
+  .page.about .right-page .img-wrapper {
+    margin: 0 auto;
   }
 }
-/* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
-@media screen and (max-width: 450px) {
-  .container_main {
+@media screen and (max-width: 768px) {
+  .main_container {
     width: 100%;
+    padding: 0 5% 0;
   }
-  .container_main .page.about {
-    display: block;
+}
+/* Extra Small Devices, Phones */
+@media screen and (max-width: 512px) {
+  .main_container {
     width: 100%;
+    padding: 0;
+  }
+  .main_container .docker {
+    padding: 0;
   }
 }
 
