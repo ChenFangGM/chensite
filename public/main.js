@@ -43,6 +43,6 @@ require([
 ],function(require, angular){
 	'use strict';
 	require(['domReady!'], function(document){
-		angular.bootstrap(document, ['chensiteApp']);
+		angular.bootstrap(document.getElementById('main-body'), ['chensiteApp']);
 	});
 });

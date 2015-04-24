@@ -9,8 +9,10 @@ html{
 
 body {
   height: 100%;
-  font: normal 16px/24px "ProximaNovaLight", "Helvetica Neue", Helvetica, sans-serif;
+  padding-top: 35px;
   overflow-x: hidden;
+  font: normal 16px/24px "ProximaNovaLight", "Helvetica Neue", Helvetica, sans-serif;
+
 }
 
 img{
@@ -22,17 +24,37 @@ img.preload {
   display: none;
 }
 /* End General */
-
 /* */
 
-/* Main Doc */
+/* Main Element */
+/* topbar */
+.topbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 35px;
+  background-color: black;
+  .login-group{
+    float: right;
+    padding: 5px 15px 5px 10px;
+    font-family: serif;
+  }
+}
+
+/* main body */
+.main-container{
+  height: 100%;
+  width: 100%;
+}
 
 /* sidebar */
 .sidebar{
   position: fixed;
   width: 30%;
   height: 100%;
-  header{
+  .sidebar-header{
     border-bottom: 0;
     margin: 20% 0;
     padding-left: 15%;
@@ -61,48 +83,38 @@ img.preload {
     }
   }
 }
-
-/* main container */
-.main_container {
+/* main right container */
+.main-right {
   position: relative;
   float: right;
-  overflow-x: hidden;
   width: 70%;
   height: 100%;
+  overflow-x: hidden;
   background: #f1f1f1;
   border-left: solid 1px #e0e0e0;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   padding: 0 5% 0 5%;
   .docker{
     position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    padding-top: 30px;
     .page{
       padding: 20px 0 20px 0;
       background-color: white;
       box-shadow: 0 0 5px rgba(0,0,0,.2);
     }
-    .footer_main{
-      margin-top: 30px;
-      padding: 15px;
-      text-align: center;
-      background-color: white;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      > p{
-        margin: 0;
-      }
+  }
+  .main-footer{
+    margin-top: 30px;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    > p{
+      margin: 0;
     }
   }
 }
 
-/* End Main Doc */
-
+/* End Main Element */
 /* */
 
 /* Page App */
@@ -349,7 +361,7 @@ div#timeline-form{
   .sidebar{
     display: none;
   }
-  .main_container{
+  .main-right{
     width: 100%;
     .docker{
       margin-top: 30px;
@@ -366,7 +378,7 @@ div#timeline-form{
 
 /* Extra Small Devices, Phones */
 @media screen and (max-width: 768px) {
-  .main_container{
+  .main-right{
     width: 100%;
     padding: 0 5% 0 %5;
   }
@@ -374,7 +386,7 @@ div#timeline-form{
 
 /* Extra Small Devices, Phones */
 @media screen and (max-width: 512px) {
-  .main_container{
+  .main-right{
     width: 100%;
     padding: 0;
     .docker{

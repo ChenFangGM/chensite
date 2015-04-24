@@ -31,37 +31,41 @@
   <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css"><!-- load bootstrap -->
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
 </head>
-<body ng-app="">
-</div>
-<aside class="sidebar">
-  <header class="sidebar-header">
-    <h1><a ui-sref="home">Chen-Fang.COM</a></h1>
-    <h2>work hard & share more</h2>
-  </header>
-  <nav>
-    <a ui-sref="about">
-      <h4>Chen's Bio</h4>
-    </a>
-    <a ui-sref="portfolio">
-      <h4>Portfolio</h4>
-    </a>
-    <a ui-sref="profile">
-      <h4>Profile</h4>
-    </a>
+<body id="main-body">
+<header class="topbar">
+  <div class="login-group">
     <a ui-sref="login-modal.signup">
-      <h4>SignUp</h4>
+      SignUp
     </a>
-  </nav>
-</aside>
-<main class="main_container">
-  <div class="docker">
-    <div ui-view></div>
-    <footer class="footer_main">
-      <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
-    </footer>
+  </div>
+</header>
+<main class="main-container">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1><a ui-sref="home">Chen-Fang.COM</a></h1>
+      <h2>work hard & share more</h2>
+    </div>
+    <nav>
+      <a ui-sref="about">
+        <h4>Chen's Bio</h4>
+      </a>
+      <a ui-sref="portfolio">
+        <h4>Portfolio</h4>
+      </a>
+      <a ui-sref="profile">
+        <h4>Profile</h4>
+      </a>
+    </nav>
+  </aside>
+  <div class="main-right">
+    <div class="docker">
+      <div ui-view></div>
+      <footer class="main-footer">
+        <p> C. F. Game Studio. Copy Right&reg; 2015 </p>
+      </footer>
+    </div>
   </div>
 </main>
-
 <!-- JS -->
 <script data-main="main" src="libs/requirejs/require.js"></script>
 </body>
