@@ -20,7 +20,7 @@ exports.login = function (req, res, next) {
   passport.authenticate('local-login', function(err, user, info) {
     var error = err || info;
     if (error) {
-	    return res.json(400, error);
+	    return res.status(400).json(error);
     }
     req.login(user, function(err) {
       if (err) {

@@ -15,7 +15,7 @@ require.config({
 		'bootstrap': 'libs/bootstrap/dist/js/bootstrap.min',
 		'ui-bootstrap': 'libs/angular-bootstrap/ui-bootstrap.min',
 		'unityObject2': 'src/js/utilities/UnityObject2',
-		'mainPageUtility': 'src/js/utilities/main_page_utility',
+		'mainpage-controller': 'src/js/utilities/main_page_utility',
 		'timelineModule': 'src/js/modules/timeline-module',
 		'text': 'libs/requirejs-text/text',
 		'app': 'app',

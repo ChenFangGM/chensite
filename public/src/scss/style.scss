@@ -23,6 +23,15 @@ img{
 img.preload {
   display: none;
 }
+
+.hideElement{
+  display: none;
+}
+
+.showElement{
+  display: inherit;
+}
+
 /* End General */
 /* */
 
@@ -36,10 +45,23 @@ img.preload {
   width: 100%;
   height: 35px;
   background-color: black;
+  font-weight: bold;
   .login-group{
     float: right;
     padding: 5px 15px 5px 10px;
     font-family: serif;
+    > span{
+      color: gray;
+    }
+  }
+  .user-admin-top{
+    float: right;
+    padding: 5px 15px 5px 10px;
+    .dropdown-menu{
+      right: 0;
+      left: unset;
+      margin-top: 8px;
+    }
   }
 }
 
@@ -196,11 +218,6 @@ img.preload {
     width: 90%;
     margin-left: 5%;
   }
-}
-
-.login-modal > .modal-dialog{
-  float: right;
-  margin-right: calc(35.5% - 150px);
 }
 
 .modal {

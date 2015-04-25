@@ -45,7 +45,12 @@ define([
 				var cb = callback || angular.noop;
 				User.save(userinfo,
 					function(user) {
-						$rootScope.currentUser = user;
+						Session.save(user, function(user) {
+							$rootScope.currentUser = user;
+							return cb();
+						}, function(err) {
+							return cb(err.data);
+						});
 						return cb();
 					},
 					function(err) {
