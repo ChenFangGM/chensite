@@ -32,11 +32,9 @@ define([
 						templateUrl: 'src/views/login-modal.html',
 						backdrop: true,
 						keyboard: false,
-						windowClass: 'login-modal right fade',
+						windowClass: 'right fade',
 						size: 'sm'
-					}).result.then(function() {
-							$state.go('profile');
-						});
+					});
 				}
 			})
 			.state('login-modal.login', {

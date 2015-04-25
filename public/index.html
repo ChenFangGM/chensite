@@ -31,12 +31,28 @@
   <link rel="stylesheet" type="text/css" href="libs/bootstrap/dist/css/bootstrap.min.css"><!-- load bootstrap -->
   <link rel="stylesheet" type="text/css" href="dist/css/style.css">
 </head>
-<body id="main-body">
+<body id="main-body" ng-controller="indexPageController">
 <header class="topbar">
-  <div class="login-group">
+  <div class="login-group" ng-class="currentUser.username?'hideElement' : 'showElement'">
+    <a ui-sref="login-modal.login">
+      Login
+    </a>
+    <span> / </span>
     <a ui-sref="login-modal.signup">
       SignUp
     </a>
+  </div>
+  <div class="user-admin-top hideElement" ng-class="currentUser.username?'showElement' : 'hideElement'">
+    <span class="dropdown" dropdown>
+      <a href class="dropdown-toggle" dropdown-toggle>
+        Hi, {{currentUser.username?currentUser.username:''}}<span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a ui-sref="profile">Profile</a></li>
+        <li class="divider"></li>
+        <li><a ui-sref="home">Logout</a></li>
+      </ul>
+    </span>
   </div>
 </header>
 <main class="main-container">
@@ -51,9 +67,6 @@
       </a>
       <a ui-sref="portfolio">
         <h4>Portfolio</h4>
-      </a>
-      <a ui-sref="profile">
-        <h4>Profile</h4>
       </a>
     </nav>
   </aside>

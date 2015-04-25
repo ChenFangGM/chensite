@@ -25,6 +25,14 @@ img.preload {
   display: none;
 }
 
+.hideElement {
+  display: none;
+}
+
+.showElement {
+  display: inherit;
+}
+
 /* End General */
 /* */
 /* Main Element */
@@ -37,11 +45,24 @@ img.preload {
   width: 100%;
   height: 35px;
   background-color: black;
+  font-weight: bold;
 }
 .topbar .login-group {
   float: right;
   padding: 5px 15px 5px 10px;
   font-family: serif;
+}
+.topbar .login-group > span {
+  color: gray;
+}
+.topbar .user-admin-top {
+  float: right;
+  padding: 5px 15px 5px 10px;
+}
+.topbar .user-admin-top .dropdown-menu {
+  right: 0;
+  left: unset;
+  margin-top: 8px;
 }
 
 /* main body */
@@ -191,11 +212,6 @@ img.preload {
 .page.profile .userinfo {
   width: 90%;
   margin-left: 5%;
-}
-
-.login-modal > .modal-dialog {
-  float: right;
-  margin-right: calc(35.5% - 150px);
 }
 
 .modal {

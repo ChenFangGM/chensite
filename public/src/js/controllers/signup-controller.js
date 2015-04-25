@@ -16,6 +16,7 @@ define([
 					$scope.errors = {};
 					if (!err) {
 						$scope.$close();
+						$state.go('home');
 					} else {
 						angular.forEach(err.errors, function(error, field) {
 							form[field].$setValidity('mongoose', false);
@@ -25,10 +26,5 @@ define([
 				}
 			);
 		};
-
-		$rootScope.$on('$stateChangeStart',
-			function(event, toState, toParams, fromState, fromParams){
-				$scope.$dismiss();
-			});
 	});
 });
