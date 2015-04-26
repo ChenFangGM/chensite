@@ -20,7 +20,7 @@ require.config({
 		'text': 'libs/requirejs-text/text',
 		'app': 'app',
 		'router': 'router',
-		'google-analytics': 'src/js/tracking/google_analytics'
+		'track': 'src/js/tracking/pixel'
 	},
 	// dependencies defined below
 	shim: {
@@ -39,7 +39,7 @@ require([
 	'angular',
 	'app',
 	'router',
-	'google-analytics'
+	'track'
 ],function(require, angular){
 	'use strict';
 	require(['domReady!'], function(document){

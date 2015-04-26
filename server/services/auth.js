@@ -7,5 +7,4 @@ exports.ensureAuthenticated = function(req, res, next) {
 		return next();
 	}
 	res.redirect('/#/modal/login');
-	//res.send(401);
-}
+};
