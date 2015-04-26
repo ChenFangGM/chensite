@@ -20,7 +20,7 @@ require.config({
 		'text': 'libs/requirejs-text/text',
 		'app': 'app',
 		'router': 'router',
-		'track': 'src/js/tracking/pixel'
+		'track': 'src/js/utilities/pixel'
 	},
 	// dependencies defined below
 	shim: {
