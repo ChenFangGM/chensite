@@ -94,6 +94,7 @@ UserSchema.pre('save', function(next) {
 		next();
 	}
 });
+
 var validatePresenceOf = function (value) {
 	return value && value.length;
 };
@@ -104,16 +105,9 @@ UserSchema.methods = {
 	generateHash: function(password) {
 		return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 	},
-  // authentication
-	validPassword: function(password) {
-		if (!password){
-			return '';
-		}
-		return bcrypt.compareSync(password, this.local.password);
-	},
 	// authentication
-	authenticate: function(plainText) {
-		return bcrypt.compareSync(plainText, this.local.password);
+	authenticate: function(password) {
+		return bcrypt.compareSync(password, this.local.password);
 	}
 }
 // create the model for users and expose it to our app

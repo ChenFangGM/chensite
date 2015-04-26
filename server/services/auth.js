@@ -1,8 +1,8 @@
-// config/auth.js
+// services/auth.js
 
 'use strict';
 // Route middleware to ensure user is authenticated
-exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
+exports.ensureAuthenticated = function(req, res, next) {
 	if (req.isAuthenticated()) {
 		return next();
 	}

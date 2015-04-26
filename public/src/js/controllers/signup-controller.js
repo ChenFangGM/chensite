@@ -12,17 +12,19 @@ define([
 						'password': $scope.user.password
 					}
 				},
+				// error cb action
 				function(err) {
 					$scope.errors = {};
-					if (!err) {
-						$scope.$close();
-						$state.go('home');
-					} else {
-						angular.forEach(err.errors, function(error, field) {
-							form[field].$setValidity('mongoose', false);
-							$scope.errors[field] = error.type;
-						});
-					}
+					angular.forEach(err.errors, function(value, key) {
+						form[key].$setValidity('mongoose', false);
+						$scope.errors[key] = value.type;
+					});
+				},
+				// success cb
+				function(){
+					$scope.errors = {};
+					$scope.$close();
+					$state.go('home');
 				}
 			);
 		};

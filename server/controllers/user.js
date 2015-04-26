@@ -1,3 +1,5 @@
+// controller/user.js
+
 'use strict';
 
 var mongoose = require('mongoose');
@@ -22,7 +24,7 @@ exports.create = function (req, res, next) {
 	});
 };
 
-exports.show = function (req, res, next) {
+exports.find = function (req, res, next) {
   var userId = req.params.userId;
 
   User.findById(ObjectId(userId), function (err, user) {

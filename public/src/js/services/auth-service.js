@@ -9,18 +9,19 @@ define([
 		$cookies.remove('user');
 
 		return {
-			login: function(provider, user, callback) {
-				var cb = callback || angular.noop;
+
+			login: function(provider, user, err_callback, suc_callback) {
+				var e_cb = err_callback || angular.noop;
+				var s_cb = suc_callback || angular.noop;
 				Session.save({
 					provider: provider,
 					email: user.email,
-					password: user.password,
-					rememberMe: user.rememberMe
+					password: user.password
 				}, function(user) {
 					$rootScope.currentUser = user;
-					return cb();
+					return s_cb();
 				}, function(err) {
-					return cb(err.data);
+					return e_cb(err.data);
 				});
 			},
 
@@ -41,20 +42,16 @@ define([
 				});
 			},
 
-			createUser: function(userinfo, callback) {
-				var cb = callback || angular.noop;
+			createUser: function(userinfo, err_callback, suc_callback) {
+				var e_cb = err_callback || angular.noop;
+				var s_cb = suc_callback || angular.noop;
 				User.save(userinfo,
 					function(user) {
-						Session.save(user, function(user) {
-							$rootScope.currentUser = user;
-							return cb();
-						}, function(err) {
-							return cb(err.data);
-						});
-						return cb();
+						$rootScope.currentUser = user;
+						return s_cb();
 					},
 					function(err) {
-						return cb(err.data);
+						return e_cb(err.data);
 					});
 			},
 

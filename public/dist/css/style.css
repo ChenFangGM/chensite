@@ -332,10 +332,6 @@ div#timeline-form button#timeline-add-btn {
 }
 /*==========  Responsive  ==========*/
 @media screen and (max-width: 991px) {
-  .docker {
-    margin-top: 30px;
-  }
-
   .page.about .mid-page {
     margin: 0;
   }
@@ -357,9 +353,6 @@ div#timeline-form button#timeline-add-btn {
 
   .main-right {
     width: 100%;
-  }
-  .main-right .docker {
-    margin-top: 30px;
   }
 
   .page.about .right-page .img-wrapper {

@@ -4,7 +4,8 @@ define([
 	'./indexPage-controller',
 	'./portfolio-controller',
 	'./profile-controller',
-	'./signup-controller'
+	'./signup-controller',
+	'./login-controller'
 ], function () {
 	'use strict';
 });

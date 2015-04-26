@@ -24,6 +24,7 @@
     "bcrypt-nodejs": "latest",
     "path": "latest",
     "fs": "latest",
+    "connect-mongo": "latest",
 
     "morgan": "latest",
     "body-parser": "latest",

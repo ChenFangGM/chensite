@@ -42,7 +42,8 @@ define([
 				parent: 'login-modal',
 				views: {
 					'login-modal@': {
-						templateUrl: 'src/views/login.html'
+						templateUrl: 'src/views/login.html',
+						controller: 'loginController'
 					}
 				}
 			})
