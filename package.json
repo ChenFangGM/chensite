@@ -11,6 +11,9 @@
   "main": "server.js",
   "dependencies": {
     "express": "latest",
+    "mongodb-core": "latest",
+    "readable-stream": "latest",
+    "connect-mongo": "latest",
     "mongoose": "latest",
     "requirejs": "latest",
     "ejs": "latest",
@@ -24,7 +27,6 @@
     "bcrypt-nodejs": "latest",
     "path": "latest",
     "fs": "latest",
-    "connect-mongo": "latest",
 
     "morgan": "latest",
     "body-parser": "latest",
