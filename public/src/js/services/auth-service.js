@@ -4,24 +4,41 @@ define([
 	'./service-manager'
 ], function(serviceManager){
 	'use strict';
-	serviceManager.factory('Auth', function Auth($rootScope, $cookies, Session, User) {
-		$rootScope.currentUser = $cookies.get('user') || null;
-		$cookies.remove('user');
+	serviceManager.factory('Auth', function Auth($rootScope, Session, User) {
 
 		return {
+			createUser: function(userinfo, callback) {
+				var cb = callback || angular.noop;
+				User.save(userinfo,
+					function(user) {
+						$rootScope.currentUser = user;
+						return cb();
+					},
+					function(err) {
+						return cb(err.data);
+					});
+			},
 
-			login: function(provider, user, err_callback, suc_callback) {
-				var e_cb = err_callback || angular.noop;
-				var s_cb = suc_callback || angular.noop;
+			currentUser: function(callback) {
+				var cb = callback || angular.noop;
+				Session.get(function(user) {
+					$rootScope.currentUser = user;
+					return cb();
+				},function(err){
+					return cb(err.data);
+				});
+			},
+
+			login: function(user, callback) {
+				var cb = callback || angular.noop;
 				Session.save({
-					provider: provider,
 					email: user.email,
 					password: user.password
 				}, function(user) {
 					$rootScope.currentUser = user;
-					return s_cb();
+					return cb();
 				}, function(err) {
-					return e_cb(err.data);
+					return cb(err.data);
 				});
 			},
 
@@ -33,25 +50,6 @@ define([
 					},
 					function(err) {
 						return cb(err.data);
-					});
-			},
-
-			currentUser: function() {
-				Session.get(function(user) {
-					$rootScope.currentUser = user;
-				});
-			},
-
-			createUser: function(userinfo, err_callback, suc_callback) {
-				var e_cb = err_callback || angular.noop;
-				var s_cb = suc_callback || angular.noop;
-				User.save(userinfo,
-					function(user) {
-						$rootScope.currentUser = user;
-						return s_cb();
-					},
-					function(err) {
-						return e_cb(err.data);
 					});
 			},
 

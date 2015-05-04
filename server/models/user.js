@@ -7,7 +7,7 @@ var bcrypt   = require('bcrypt-nodejs');
 /**
  * User Schema
  */
-var UserSchema = mongoose.Schema({
+var UserSchema = new mongoose.Schema({
 	local: {
 		email: {
 			type: String,
@@ -23,7 +23,6 @@ var UserSchema = mongoose.Schema({
 			type: String,
 			required: true
 		},
-		name: String,
 		admin: Boolean,
 		guest: Boolean,
 		provider: String
@@ -48,39 +47,47 @@ var UserSchema = mongoose.Schema({
 	}
 });
 
-// virtual property
+/**
+ * Virtual Propety
+ */
 UserSchema
 	.virtual('user_info')
 	.get(function () {
 		return { '_id': this._id, 'username': this.local.username, 'email': this.local.email, 'password': this.local.password };
 	});
 
+/**
+ * Validation
+ */
 // validate email format
-UserSchema.path('local.email').validate(function (email) {
+UserSchema
+	.path('local.email')
+	.validate(function (email) {
 	var emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	return emailRegex.test(email);
-}, 'The specified email is invalid.');
+}, 'email is invalid');
 
 // validate email duplication
-UserSchema.path('local.email').validate(function(value, respond) {
-	mongoose.models["User"].findOne({email: value}, function(err, user) {
-		if(err) throw err;
-		if(user){
-			return respond(false);
-		}else{
-			return respond(true);
-		}
-	});
-}, 'The specified email address is already in use.');
-
-// validate username duplication
-UserSchema.path('local.username').validate(function(value, respond) {
-	mongoose.models["User"].findOne({username: value}, function(err, user) {
+UserSchema
+	.path('local.email')
+	.validate(function(value, respond) {
+	mongoose.models["User"].findOne({'local.email': value}, function(err, user) {
 		if(err) throw err;
 		if(user) return respond(false);
 		respond(true);
 	});
-}, 'The specified username is already in use.');
+}, 'email is already in use');
+
+// validate username duplication
+UserSchema
+	.path('local.username')
+	.validate(function(value, respond) {
+	mongoose.models["User"].findOne({'local.username': value}, function(err, user) {
+		if(err) throw err;
+		if(user) return respond(false);
+		respond(true);
+	});
+}, 'nickname is already in use');
 
 // pre-save
 UserSchema.pre('save', function(next) {

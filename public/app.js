@@ -22,7 +22,6 @@ define([
 		'serviceManager',
 		'directiveManager'
 		//'app.filters',
-		//'app.directives'
 	]);
 	return app;
 });

@@ -3,7 +3,7 @@ define([
 	'./controller-manager'
 ], function (controllerManager) {
 	'use strict';
-	controllerManager.controller('signupController', function ($scope, $rootScope, $state, Auth) {
+	controllerManager.controller('signupController', function ($scope, $state, Auth) {
 		$scope.register = function(form) {
 			Auth.createUser({
 					'local':{
@@ -12,19 +12,24 @@ define([
 						'password': $scope.user.password
 					}
 				},
-				// error cb action
+				// callback for success and error
 				function(err) {
 					$scope.errors = {};
-					angular.forEach(err.errors, function(value, key) {
-						form[key].$setValidity('mongoose', false);
-						$scope.errors[key] = value.type;
-					});
-				},
-				// success cb
-				function(){
-					$scope.errors = {};
-					$scope.$close();
-					$state.go('home');
+					if(!err){
+						$scope.$close();
+						$state.go('home');
+					}else{
+						angular.forEach(err.errors, function(value, key) {
+							if(key.indexOf('.') > -1){
+								var extract = key.split('.');
+								form[extract[1]].$setValidity('mongoose', false);
+								$scope.errors[extract[1]] = value.message;
+							}else{
+								form[key].$setValidity('mongoose', false);
+								$scope.errors[key] = value.message;
+							}
+						});
+					}
 				}
 			);
 		};

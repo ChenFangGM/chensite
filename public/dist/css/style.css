@@ -139,6 +139,11 @@ img.preload {
 
 /* End Main Element */
 /* */
+/* login-modal */
+.login-modal .help-block {
+  padding-left: 5px;
+}
+
 /* Page App */
 .page.about .mid-page .wrapper {
   width: 320px;

@@ -2,11 +2,10 @@
 define([
 	'./directive-manager'
 ],function(directiveManager) {
-	directiveManager
 	/**
 	 * Removes server error when user updates input
 	 */
-		.directive('mongooseError', function () {
+	directiveManager.directive('mongooseError', function () {
 			return {
 				restrict: 'A',
 				require: 'ngModel',

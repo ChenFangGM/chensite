@@ -19,9 +19,8 @@ var session = require('express-session'); //express-session
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var mongoStore = require('connect-mongo')(session);
 
-var configDB = require('./server/config/database');            // load the configDB config
-
 // configuration ===============================================================
+var configDB = require('./server/config/database');            // load the configDB config
 mongoose.connect(configDB.url);     // connect to mongoDB configDB on modulus.io
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Database connection error:'));
@@ -29,7 +28,7 @@ db.once('open', function callback() { console.log('Database connected');});
 db.on('disconnected', function () {
 	mongoose.connect(configDB.url);
 });
-
+// passport config
 require('./server/config/passport')(passport); // pass passport for configuration
 
 // set up express application

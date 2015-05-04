@@ -15,9 +15,10 @@ exports.create = function (req, res, next) {
 	// save the user to database
 	newUser.save(function(err) {
 		if (err){
-			throw err;
+			return res.status(400).json(err);
 		}
-		req.logIn(newUser, function(err) {
+		req.logIn(newUser, function(err){
+			//relearn.1 : next
 			if (err) {return next(err);}
 			return res.json(newUser.user_info);
 		});
@@ -25,31 +26,31 @@ exports.create = function (req, res, next) {
 };
 
 exports.find = function (req, res, next) {
-  var userId = req.params.userId;
+	var userId = req.params.userId;
 
-  User.findById(ObjectId(userId), function (err, user) {
-    if (err) {
-      return next(new Error('Failed to load User'));
-    }
-    if (user) {
-      res.send({username: user.username, profile: user.profile });
-    } else {
-      res.send(404, 'USER_NOT_FOUND')
-    }
-  });
+	User.findById(ObjectId(userId), function (err, user) {
+		if (err) {
+			return next(new Error('Failed to load User'));
+		}
+		if (user) {
+			res.send({username: user.username, profile: user.profile });
+		} else {
+			res.send(404, 'USER_NOT_FOUND')
+		}
+	});
 };
 
 exports.exists = function (req, res, next) {
-  var username = req.params.username;
-  User.findOne({ username : username }, function (err, user) {
-    if (err) {
-      return next(new Error('Failed to load User ' + username));
-    }
+	var username = req.params.username;
+	User.findOne({ username : username }, function (err, user) {
+		if (err) {
+			return next(new Error('Failed to load User ' + username));
+		}
 
-    if(user) {
-      res.json({exists: true});
-    } else {
-      res.json({exists: false});
-    }
-  });
+		if(user) {
+			res.json({exists: true});
+		} else {
+			res.json({exists: false});
+		}
+	});
 }
